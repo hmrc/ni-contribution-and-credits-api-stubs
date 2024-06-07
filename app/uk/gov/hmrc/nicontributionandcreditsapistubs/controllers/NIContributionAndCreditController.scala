@@ -19,7 +19,7 @@ package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 import play.api.Logging
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{NIContribution, NICredit}
+import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{Failure, NIContribution, NICredit}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
@@ -33,12 +33,23 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
   def contributionsAndCredits(nationalInsuranceNumber: String,
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
-
-    if (request.hasBody) {
-      Future.successful(Ok(result))
-    } else {
-      Future.successful(UnprocessableEntity("No DoB Given"))
+    nationalInsuranceNumber match {
+      case "SS000200" =>
+        Future.successful(Ok(greenPathResponse))
+      case "SS000400" =>
+        Future.successful(BadRequest(failurePathResponse))
+      case "SS000404" =>
+        Future.successful(NotFound)
+      case "SS000500" =>
+        Future.successful(InternalServerError)
+      case _ =>
+        Future.successful(NotImplemented)
     }
+    //    if (request.hasBody) {
+    //      Future.successful(Ok(greenPathResponse))
+    //    } else {
+    //      Future.successful(UnprocessableEntity("No DoB Given"))
+    //    }
   }
 
   private val builder = Json.newBuilder
@@ -63,6 +74,16 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
   builder += ("niContribution" -> nIContributionsList)
   builder += ("niCredit" -> nICreditList)
 
-  private val result = builder.result()
+  private val greenPathResponse = builder.result()
+
+  builder.clear()
+
+  private val failureList = new mutable.ListBuffer[Failure]()
+  failureList += new Failure("HTTP message not readable", "")
+  failureList += new Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST")
+
+  builder += ("failureList" -> failureList)
+
+  private val failurePathResponse = builder.result()
 
 }
