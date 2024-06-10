@@ -13,11 +13,9 @@ lazy val microservice = Project("ni-contribution-and-credits-api-stubs", file(".
   )
   .settings(resolvers += Resolver.jcenterRepo)
   .settings(CodeCoverageSettings.settings: _*)
-  .settings(PlayKeys.playDefaultPort := 9001)
 
 lazy val it = project
   .enablePlugins(PlayScala)
   .dependsOn(microservice % "test->test")
   .settings(DefaultBuildSettings.itSettings())
   .settings(libraryDependencies ++= AppDependencies.it)
-

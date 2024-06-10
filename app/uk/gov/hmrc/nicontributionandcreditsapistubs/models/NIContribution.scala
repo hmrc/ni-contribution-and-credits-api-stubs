@@ -22,11 +22,10 @@ import play.api.libs.json.{Json, OFormat}
 case class NIContribution(taxYear: Int,
                           contributionCategoryLetter: String,
                           contributionCategory: String,
-                          totalContribution: Double,
-                          primaryContribution: Double,
+                          totalContribution: BigDecimal,
+                          primaryContribution: BigDecimal,
                           class1ContributionStatus: String,
-                          primaryPAidEarnings: Double
-                         )
+                          primaryPaidEarnings: BigDecimal)
 
 @Inject
 object NIContribution {

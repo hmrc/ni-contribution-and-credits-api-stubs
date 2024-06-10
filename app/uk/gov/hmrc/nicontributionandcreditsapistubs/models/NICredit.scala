@@ -21,10 +21,10 @@ import play.api.libs.json.{Json, OFormat}
 
 case class NICredit(taxYear: Int,
                     numberOfCredits: Int,
-                    contributionCreditTypecode: String,
-                    contributionsCreditType: String,
-                    class2Or3EarningsFactr: BigDecimal,
-                    class2NicAccount: BigDecimal,
+                    contributionCreditTypeCode: String,
+                    contributionCreditType: String,
+                    class2Or3EarningsFactor: BigDecimal,
+                    class2NicAmount: BigDecimal,
                     class2Or3CreditStatus: String)
 
 @Inject
