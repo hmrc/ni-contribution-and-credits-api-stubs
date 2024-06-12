@@ -74,7 +74,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Start tax year after end tax year", "63496")
 
-        Future.successful(Unauthorized(buildFailFailedResponse(failuresList)))
+        Future.successful(UnprocessableEntity(buildFailFailedResponse(failuresList)))
       case "SS000500" =>
         Future.successful(InternalServerError)
       case _ =>
