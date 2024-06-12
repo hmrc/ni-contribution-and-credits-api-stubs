@@ -17,7 +17,7 @@
 package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 
 import play.api.Logging
-import play.api.libs.json.Json
+import play.api.libs.json.{JsObject, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{Failure, NIContribution, NICredit}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
@@ -30,60 +30,72 @@ import scala.concurrent.Future
 class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
   extends BackendController(cc) with Logging {
 
+  private val builder = Json.newBuilder
+
   def contributionsAndCredits(nationalInsuranceNumber: String,
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
     nationalInsuranceNumber match {
       case "SS000200" =>
-        Future.successful(Ok(greenPathResponse))
+        val nIContributionsList = new mutable.ListBuffer[NIContribution]()
+        val nICreditList = new mutable.ListBuffer[NICredit]()
+
+        nIContributionsList += new NIContribution(2022,
+          "s",
+          "(NONE)",
+          99999999999999.98,
+          99999999999999.98,
+          "COMPLIANCE & YIELD INCOMPLETE",
+          99999999999999.98)
+
+        nICreditList += new NICredit(2022,
+          53,
+          "C2",
+          "CLASS 2 - NORMAL RATE",
+          99999999999999.98,
+          99999999999999.98,
+          "NOT KNOWN/NOT APPLICABLE")
+
+        Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, nICreditList)))
       case "SS000400" =>
-        Future.successful(BadRequest(failurePathResponse))
+        val failuresList = new mutable.ListBuffer[Failure]()
+        failuresList += new Failure("HTTP message not readable", "")
+        failuresList += new Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST")
+
+        Future.successful(BadRequest(buildFailFailedResponse(failuresList)))
+      case "SS000401" =>
+        val failuresList = new mutable.ListBuffer[Failure]()
+        failuresList += new Failure("Unauthorised", "Invalid Credentials")
+
+        Future.successful(Unauthorized(buildFailFailedResponse(failuresList)))
       case "SS000404" =>
         Future.successful(NotFound)
+      case "SS000422" =>
+        val failuresList = new mutable.ListBuffer[Failure]()
+        failuresList += new Failure("Start tax year after end tax year", "63496")
+
+        Future.successful(Unauthorized(buildFailFailedResponse(failuresList)))
       case "SS000500" =>
         Future.successful(InternalServerError)
       case _ =>
         Future.successful(NotImplemented)
     }
-    //    if (request.hasBody) {
-    //      Future.successful(Ok(greenPathResponse))
-    //    } else {
-    //      Future.successful(UnprocessableEntity("No DoB Given"))
-    //    }
   }
 
-  private val builder = Json.newBuilder
-  private val nIContributionsList = new mutable.ListBuffer[NIContribution]()
-  private val nICreditList = new mutable.ListBuffer[NICredit]()
+  private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NIContribution],
+                                      nICreditList: mutable.ListBuffer[NICredit]): JsObject = {
+    builder.clear()
 
-  nIContributionsList += new NIContribution(2022,
-    "s",
-    "(NONE)",
-    99999999999999.98,
-    99999999999999.98,
-    "COMPLIANCE & YIELD INCOMPLETE",
-    99999999999999.98)
-  nICreditList += new NICredit(2022,
-    53,
-    "C2",
-    "CLASS 2 - NORMAL RATE",
-    99999999999999.98,
-    99999999999999.98,
-    "NOT KNOWN/NOT APPLICABLE")
+    builder += ("niContribution" -> niContributionsList)
+    builder += ("niCredit" -> nICreditList)
 
-  builder += ("niContribution" -> nIContributionsList)
-  builder += ("niCredit" -> nICreditList)
+    builder.result()
+  }
 
-  private val greenPathResponse = builder.result()
-
-  builder.clear()
-
-  private val failureList = new mutable.ListBuffer[Failure]()
-  failureList += new Failure("HTTP message not readable", "")
-  failureList += new Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST")
-
-  builder += ("failureList" -> failureList)
-
-  private val failurePathResponse = builder.result()
+  private def buildFailFailedResponse(failuresList: mutable.ListBuffer[Failure]): JsObject = {
+    builder.clear()
+    builder += ("failures" -> failuresList)
+    builder.result()
+  }
 
 }
