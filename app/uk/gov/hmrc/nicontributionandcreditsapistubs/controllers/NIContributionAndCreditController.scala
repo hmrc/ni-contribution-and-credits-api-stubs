@@ -36,7 +36,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
     nationalInsuranceNumber match {
-      case "SS000200" =>
+      case "BB 00 02 00 B" =>
         val nIContributionsList = new mutable.ListBuffer[NIContribution]()
         val nICreditList = new mutable.ListBuffer[NICredit]()
 
@@ -57,28 +57,26 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
           "NOT KNOWN/NOT APPLICABLE")
 
         Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, nICreditList)))
-      case "SS000400" =>
+      case "BB 00 04 00 B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("HTTP message not readable", "")
         failuresList += new Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST")
 
         Future.successful(BadRequest(buildFailFailedResponse(failuresList)))
-      case "SS000401" =>
+      case "BB 00 04 01 B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Unauthorised", "Invalid Credentials")
 
         Future.successful(Unauthorized(buildFailFailedResponse(failuresList)))
-      case "SS000404" =>
+      case "BB 00 04 04 B" =>
         Future.successful(NotFound)
-      case "SS000422" =>
+      case "BB 00 04 22 B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Start tax year after end tax year", "63496")
 
         Future.successful(UnprocessableEntity(buildFailFailedResponse(failuresList)))
-      case "SS000500" =>
-        Future.successful(InternalServerError)
       case _ =>
-        Future.successful(NotImplemented)
+        Future.successful(InternalServerError)
     }
   }
 
