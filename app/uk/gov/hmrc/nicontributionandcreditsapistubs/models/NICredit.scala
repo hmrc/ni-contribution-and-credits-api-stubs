@@ -14,14 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.config
+package uk.gov.hmrc.nicontributionandcreditsapistubs.models
 
-import play.api.Configuration
+import com.google.inject.Inject
+import play.api.libs.json.{Json, OFormat}
 
-import javax.inject.{Inject, Singleton}
+case class NICredit(taxYear: Int,
+                    numberOfCredits: Int,
+                    contributionCreditTypeCode: String,
+                    contributionCreditType: String,
+                    class2Or3EarningsFactor: BigDecimal,
+                    class2NicAmount: BigDecimal,
+                    class2Or3CreditStatus: String)
 
-@Singleton
-class AppConfig @Inject()(config: Configuration) {
-
-  val appName: String = config.get[String]("appName")
+@Inject
+object NICredit {
+  implicit val format: OFormat[NICredit] = Json.format[NICredit]
 }
