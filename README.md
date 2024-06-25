@@ -66,7 +66,7 @@ https://<host>/nps-json-service/nps/v1/api/national-insurance/:nationalInsurance
     },
     {
       "reason": "Constraint Violation - Invalid/Missing input parameter",
-      "code": "BAD_REQUEST"
+      "code": "BAD_REQUEST" 
     }
   ]
 }
