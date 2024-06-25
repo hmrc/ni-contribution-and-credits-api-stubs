@@ -36,7 +36,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
     nationalInsuranceNumber match {
-      case "BB 00 02 00 B" =>
+      case "BB000200B" =>
         val nIContributionsList = new mutable.ListBuffer[NIContribution]()
         val nICreditList = new mutable.ListBuffer[NICredit]()
 
@@ -57,20 +57,20 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
           "NOT KNOWN/NOT APPLICABLE")
 
         Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, nICreditList)))
-      case "BB 00 04 00 B" =>
+      case "BB000400B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("HTTP message not readable", "")
         failuresList += new Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST")
 
         Future.successful(BadRequest(buildFailFailedResponse(failuresList)))
-      case "BB 00 04 01 B" =>
+      case "BB000401B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Unauthorised", "Invalid Credentials")
 
         Future.successful(Unauthorized(buildFailFailedResponse(failuresList)))
-      case "BB 00 04 04 B" =>
+      case "BB000404B" =>
         Future.successful(NotFound)
-      case "BB 00 04 22 B" =>
+      case "BB000422B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Start tax year after end tax year", "63496")
 
