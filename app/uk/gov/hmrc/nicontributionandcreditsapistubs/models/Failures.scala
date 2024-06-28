@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.config
+package uk.gov.hmrc.nicontributionandcreditsapistubs.models
 
-import play.api.Configuration
+import play.api.libs.json.{Json, OFormat, Reads}
 
-import javax.inject.{Inject, Singleton}
+case class Failures(failures: Seq[Failure])
 
-@Singleton
-class AppConfig @Inject()(config: Configuration) {
 
-  val appName: String = config.get[String]("appName")
+object Failures {
+  implicit val format: OFormat[Failure] = Json.format[Failure]
+
+  implicit val reads: Reads[Failures] = Json.reads[Failures]
 }
