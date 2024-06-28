@@ -43,7 +43,7 @@ class NIContributionAndCreditControllerSpec extends AnyFreeSpec with GuiceOneApp
   "Must return 400 when the request NI ends with 400" in {
     val body = Json.obj("dateOfBirth" -> "1998-04-23")
 
-    val url = "/nps-json-service/nps/v1/api/national-insurance/BB000400/contributions-and-credits/from/2010/to/2014"
+    val url = "/nps-json-service/nps/v1/api/national-insurance/BB000400B/contributions-and-credits/from/2010/to/2014"
     val request = FakeRequest("POST", url)
       .withHeaders(CONTENT_TYPE -> "application/json")
       .withJsonBody(body)
