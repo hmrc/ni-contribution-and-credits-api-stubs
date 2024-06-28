@@ -36,7 +36,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
     nationalInsuranceNumber match {
-      case "BB000200B" =>
+      case "BB000200B" | "BB000200" =>
         val nIContributionsList = new mutable.ListBuffer[NIContribution]()
         val nICreditList = new mutable.ListBuffer[NICredit]()
 
