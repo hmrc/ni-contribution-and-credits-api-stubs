@@ -19,7 +19,7 @@ package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 import play.api.Logging
 import play.api.libs.json.{JsObject, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{Failure, NIContribution, NICredit}
+import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{Failure, NIContribution, NICredit, Response}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
@@ -58,23 +58,37 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
 
         Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, nICreditList)))
       case "BB000400B" =>
-        val failuresList = new mutable.ListBuffer[Failure]()
-        failuresList += new Failure("HTTP message not readable", "")
-        failuresList += new Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST")
 
-        Future.successful(BadRequest(buildFailFailedResponse(failuresList)))
+        val origin = "HIP"
+        val response = new Response(
+          Seq(Failure("HTTP message not readable", ""), Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
+        )
+
+        Future.successful(BadRequest(buildErrorResponse(origin, response)))
       case "BB000401B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Unauthorised", "Invalid Credentials")
 
-        Future.successful(Unauthorized(buildFailFailedResponse(failuresList)))
+        Future.successful(Unauthorized(buildFailuresResponse(failuresList)))
+      case "BB000403B" =>
+        val failure = Json.toJson(new Failure("Forbidden", "403.2"))
+
+        Future.successful(Unauthorized(failure))
       case "BB000404B" =>
         Future.successful(NotFound)
       case "BB000422B" =>
         val failuresList = new mutable.ListBuffer[Failure]()
         failuresList += new Failure("Start tax year after end tax year", "63496")
 
-        Future.successful(UnprocessableEntity(buildFailFailedResponse(failuresList)))
+        Future.successful(UnprocessableEntity(buildFailuresResponse(failuresList)))
+      case "BB000503B" =>
+
+        val origin = "HIP"
+        val response = new Response(
+          Seq(Failure("HTTP message not readable", ""), Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
+        )
+
+        Future.successful(ServiceUnavailable(buildErrorResponse(origin, response)))
       case _ =>
         Future.successful(InternalServerError)
     }
@@ -90,9 +104,16 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
     builder.result()
   }
 
-  private def buildFailFailedResponse(failuresList: mutable.ListBuffer[Failure]): JsObject = {
+  private def buildFailuresResponse(failuresList: mutable.ListBuffer[Failure]): JsObject = {
     builder.clear()
     builder += ("failures" -> failuresList)
+    builder.result()
+  }
+
+  private def buildErrorResponse(origin: String, failuresResponse: Response): JsObject = {
+    builder.clear()
+    builder += ("origin" -> origin)
+    builder += ("response" -> failuresResponse)
     builder.result()
   }
 

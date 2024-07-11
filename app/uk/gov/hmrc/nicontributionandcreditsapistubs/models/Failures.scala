@@ -16,13 +16,12 @@
 
 package uk.gov.hmrc.nicontributionandcreditsapistubs.models
 
-import play.api.libs.json.{Json, OFormat, Reads}
+import com.google.inject.Inject
+import play.api.libs.json.{Json, OFormat}
 
 case class Failures(failures: Seq[Failure])
 
-
+@Inject
 object Failures {
-  implicit val format: OFormat[Failure] = Json.format[Failure]
-
-  implicit val reads: Reads[Failures] = Json.reads[Failures]
+  implicit val format: OFormat[Failures] = Json.format[Failures]
 }
