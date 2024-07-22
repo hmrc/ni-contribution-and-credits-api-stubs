@@ -46,15 +46,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.models
+package uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors
 
 import com.google.inject.Inject
 import play.api.libs.json.{Json, OFormat}
 
-case class Response(failures: Seq[Failure])
+case class HIPFailures(failures: Seq[HIPFailure])
 
 @Inject
-object Response {
+object HIPFailures {
 
-  implicit val format: OFormat[Response] = Json.format[Response]
+  implicit val format: OFormat[HIPFailures] = Json.format[HIPFailures]
 }

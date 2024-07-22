@@ -19,7 +19,8 @@ package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 import play.api.Logging
 import play.api.libs.json.{JsObject, Json}
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{Failure, NIContribution, NICredit, Response}
+import uk.gov.hmrc.nicontributionandcreditsapistubs.models._
+import uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors.{Failure, Failures, HIPFailure, HIPFailures}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
@@ -37,30 +38,37 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
     nationalInsuranceNumber match {
       case "BB000200B" | "BB000200" =>
-        val nIContributionsList = new mutable.ListBuffer[NIContribution]()
-        val nICreditList = new mutable.ListBuffer[NICredit]()
+        val nIContributionsList = new mutable.ListBuffer[NIClass1]()
+        val nICreditList = new mutable.ListBuffer[NIClass2]()
 
-        nIContributionsList += new NIContribution(2022,
+        nIContributionsList += new NIClass1(2022,
           "s",
           "(NONE)",
-          99999999999999.98,
+          "C1",
           99999999999999.98,
           "COMPLIANCE & YIELD INCOMPLETE",
           99999999999999.98)
 
-        nICreditList += new NICredit(2022,
+        nICreditList += new NIClass2(2022,
           53,
           "C2",
-          "CLASS 2 - NORMAL RATE",
           99999999999999.98,
           99999999999999.98,
           "NOT KNOWN/NOT APPLICABLE")
 
         Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, nICreditList)))
-      case "BB000400B" =>
+      case "BB000400A" =>
 
         val origin = "HIP"
-        val response = new Response(
+        val response = new HIPFailures(
+          Seq(HIPFailure("HTTP message not readable", ""), HIPFailure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
+        )
+
+        Future.successful(BadRequest(buildHIPErrorResponse(origin, response)))
+      case "BB000400B" =>
+
+        val origin = "HoD"
+        val response = new Failures(
           Seq(Failure("HTTP message not readable", ""), Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
         )
 
@@ -84,9 +92,10 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
       case "BB000503B" =>
 
         val origin = "HIP"
-        val response = new Response(
+        val response = new Failures(
           Seq(Failure("HTTP message not readable", ""), Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
         )
+
 
         Future.successful(ServiceUnavailable(buildErrorResponse(origin, response)))
       case _ =>
@@ -94,12 +103,12 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
     }
   }
 
-  private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NIContribution],
-                                      nICreditList: mutable.ListBuffer[NICredit]): JsObject = {
+  private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NIClass1],
+                                      nICreditList: mutable.ListBuffer[NIClass2]): JsObject = {
     builder.clear()
 
-    builder += ("niContribution" -> niContributionsList)
-    builder += ("niCredit" -> nICreditList)
+    builder += ("niClass1" -> niContributionsList)
+    builder += ("niClass2" -> nICreditList)
 
     builder.result()
   }
@@ -110,7 +119,14 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
     builder.result()
   }
 
-  private def buildErrorResponse(origin: String, failuresResponse: Response): JsObject = {
+  private def buildHIPErrorResponse(origin: String, failuresResponse: HIPFailures): JsObject = {
+    builder.clear()
+    builder += ("origin" -> origin)
+    builder += ("response" -> failuresResponse)
+    builder.result()
+  }
+
+  private def buildErrorResponse(origin: String, failuresResponse: Failures): JsObject = {
     builder.clear()
     builder += ("origin" -> origin)
     builder += ("response" -> failuresResponse)
