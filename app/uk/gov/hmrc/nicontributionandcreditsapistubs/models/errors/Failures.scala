@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.models
+package uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors
 
 import com.google.inject.Inject
 import play.api.libs.json.{Json, OFormat}
 
-case class Failure(reason: String, code: String)
+case class Failures(failures: Seq[Failure])
 
 @Inject
-object Failure {
-  implicit val format: OFormat[Failure] = Json.format[Failure]
+object Failures {
+  implicit val format: OFormat[Failures] = Json.format[Failures]
 }

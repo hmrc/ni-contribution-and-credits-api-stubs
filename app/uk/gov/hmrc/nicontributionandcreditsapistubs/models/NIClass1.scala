@@ -16,12 +16,16 @@
 
 package uk.gov.hmrc.nicontributionandcreditsapistubs.models
 
-import com.google.inject.Inject
 import play.api.libs.json.{Json, OFormat}
 
-case class Failures(failures: Seq[Failure])
+case class NIClass1(taxYear: Int,
+                    contributionCategoryLetter: String,
+                    contributionCategory: String,
+                    contributionCreditType: String,
+                    primaryContribution: BigDecimal,
+                    class1ContributionStatus: String,
+                    primaryPaidEarnings: BigDecimal)
 
-@Inject
-object Failures {
-  implicit val format: OFormat[Failures] = Json.format[Failures]
+object NIClass1{
+  implicit val format: OFormat[NIClass1] = Json.format[NIClass1]
 }
