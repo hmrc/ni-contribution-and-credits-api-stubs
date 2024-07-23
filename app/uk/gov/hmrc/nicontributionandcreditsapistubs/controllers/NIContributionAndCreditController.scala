@@ -37,6 +37,58 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
     nationalInsuranceNumber match {
+      case "BB000200A" =>
+        val nIContributionsList = new mutable.ListBuffer[NIClass1]()
+        val nICreditList = new mutable.ListBuffer[NIClass2]()
+
+        nIContributionsList += new NIClass1(2022,
+          "s",
+          "(NONE)",
+          "C1",
+          99999999999999.98,
+          "COMPLIANCE & YIELD INCOMPLETE",
+          99999999999999.98)
+
+        nICreditList += new NIClass2(2022,
+          53,
+          "C2",
+          99999999999999.98,
+          99999999999999.98,
+          "NOT KNOWN/NOT APPLICABLE")
+        val jsonResponse = Json.parse("" +
+          "{" +
+          "  \"niClass1\": [" +
+          "    {" +
+          "      \"taxYear\": 2018," +
+          "      \"contributionCategoryLetter\": \"A\"," +
+          "      \"contributionCategory\": \"STANDARD RATE\"," +
+          "      \"primaryContribution\": 3189.12," +
+          "      \"class1ContributionStatus\": \"VALID\"," +
+          "      \"primaryPaidEarnings\": 35000," +
+          "      \"contributionCreditType\": \"EON\"" +
+          "    }," +
+          "    {" +
+          "      \"taxYear\": 2019," +
+          "      \"contributionCategoryLetter\": \"A\"," +
+          "      \"contributionCategory\": \"STANDARD RATE\"," +
+          "      \"primaryContribution\": 1964.16," +
+          "      \"class1ContributionStatus\": \"VALID\"," +
+          "      \"primaryPaidEarnings\": 25000," +
+          "      \"contributionCreditType\": \"EON\"" +
+          "    }," +
+          "    {" +
+          "      \"taxYear\": 2020," +
+          "      \"contributionCategoryLetter\": \"A\"," +
+          "      \"contributionCategory\": \"STANDARD RATE\"," +
+          "      \"primaryContribution\": 1964.16," +
+          "      \"class1ContributionStatus\": \"VALID\"," +
+          "      \"primaryPaidEarnings\": 25000," +
+          "      \"contributionCreditType\": \"C1\"" +
+          "    }" +
+          "  ]" +
+          "}")
+
+        Future.successful(Ok(jsonResponse))
       case "BB000200B" | "BB000200" =>
         val nIContributionsList = new mutable.ListBuffer[NIClass1]()
         val nICreditList = new mutable.ListBuffer[NIClass2]()
