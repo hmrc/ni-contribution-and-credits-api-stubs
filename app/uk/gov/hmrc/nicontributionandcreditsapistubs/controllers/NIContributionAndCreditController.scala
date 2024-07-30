@@ -108,7 +108,10 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
           99999999999999.98,
           "NOT KNOWN/NOT APPLICABLE")
 
-        Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, nICreditList)))
+        Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, Some(nICreditList))))
+      case "BB000408A" =>
+        Thread.sleep(10000)
+        Future.successful(RequestTimeout)
       case "BB000400A" =>
 
         val origin = "HIP"
@@ -156,7 +159,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
   }
 
   private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NIClass1],
-                                      nICreditList: mutable.ListBuffer[NIClass2]): JsObject = {
+                                      nICreditList: Option[mutable.ListBuffer[NIClass2]]): JsObject = {
     builder.clear()
 
     builder += ("niClass1" -> niContributionsList)
