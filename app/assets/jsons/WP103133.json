@@ -1,0 +1,12 @@
+{
+  "niClass2": [
+    {
+      "taxYear": 2023,
+      "noOfCreditsAndConts": 25,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 3075.00,
+      "class2NicAmount": 86.25,
+      "class2Or3CreditStatus": "VALID"
+    }
+  ]
+}

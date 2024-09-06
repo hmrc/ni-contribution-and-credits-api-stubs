@@ -1,0 +1,44 @@
+{
+  "niClass2": [
+    {
+      "taxYear": 2019,
+      "noOfCreditsAndConts": 30,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 3540.00,
+      "class2NicAmount": 90.00,
+      "class2Or3CreditStatus": "VALID"
+    },
+    {
+      "taxYear": 2020,
+      "noOfCreditsAndConts": 27,
+      "contributionCreditType": "2A",
+      "class2Or3EarningsFactor": 3186.00,
+      "class2NicAmount": 82.35,
+      "class2Or3CreditStatus": "POTENTIAL"
+    },
+    {
+      "taxYear": 2021,
+      "noOfCreditsAndConts": 26,
+      "contributionCreditType": "SF",
+      "class2Or3EarningsFactor": 3120.00,
+      "class2NicAmount": 96.20,
+      "class2Or3CreditStatus": "INVALID"
+    },
+    {
+      "taxYear": 2022,
+      "noOfCreditsAndConts": 30,
+      "contributionCreditType": "C2W",
+      "class2Or3EarningsFactor": 3690.00,
+      "class2NicAmount": 0.00,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE"
+    },
+    {
+      "taxYear": 2023,
+      "noOfCreditsAndConts": 41,
+      "contributionCreditType": "C2W",
+      "class2Or3EarningsFactor": 5043.00,
+      "class2NicAmount": 0.00,
+      "class2Or3CreditStatus": "INVALID COMPATIBILITY CHECK"
+    }
+  ]
+}
