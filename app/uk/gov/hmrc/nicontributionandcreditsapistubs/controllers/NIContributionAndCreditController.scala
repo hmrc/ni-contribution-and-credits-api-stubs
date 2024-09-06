@@ -17,15 +17,17 @@
 package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 
 import play.api.Logging
-import play.api.libs.json.{JsObject, Json}
+import play.api.libs.json._
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models._
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors.{Failure, Failures, HIPFailure, HIPFailures}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
+import java.nio.file.{Files, Paths}
 import javax.inject.{Inject, Singleton}
 import scala.collection.mutable
 import scala.concurrent.Future
+import scala.io.Source
 
 @Singleton()
 class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
@@ -36,12 +38,108 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
   def contributionsAndCredits(nationalInsuranceNumber: String,
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
-    nationalInsuranceNumber match {
-      case "BB000200A" =>
-        val nIContributionsList = new mutable.ListBuffer[NIClass1]()
-        val nICreditList = new mutable.ListBuffer[NIClass2]()
 
-        nIContributionsList += new NIClass1(2022,
+    nationalInsuranceNumber match {
+      case "NY634367C" | "WP103133" =>
+        val stream = readJsonFromFile(nationalInsuranceNumber)
+
+        stream match {
+          case Some(value) =>
+            Future.successful(Ok(value))
+          case None =>
+            Future.successful(InternalServerError)
+        }
+
+      case "JA000017B" | "JA000017" =>
+        var responseVariant = ""
+
+        request.body.asJson match {
+          case Some(json) =>
+            json.validate[NICCRequestPayload] match {
+              case JsSuccess(data, _) =>
+                if (data.dateOfBirth.toString.equals("1956-10-03")) responseVariant = "_1"
+                else responseVariant = "_2"
+
+              case JsError(_) =>
+                Future.successful(InternalServerError)
+            }
+
+          case _ =>
+            Future.successful(InternalServerError)
+        }
+
+        val stream = readJsonFromFile(s"JA000017B${responseVariant}")
+
+        stream match {
+          case Some(value) =>
+            responseVariant match {
+              case "_1" =>
+                Future.successful(Ok(value))
+              case "_2" =>
+                Future.successful(NotFound(value))
+            }
+          case None =>
+            Future.successful(InternalServerError)
+        }
+      case "BE699233A" =>
+        val stream = readJsonFromFile(nationalInsuranceNumber)
+
+        stream match {
+          case Some(value) =>
+            Future.successful(UnprocessableEntity(value))
+          case None =>
+            Future.successful(InternalServerError)
+        }
+
+      case "AA123456C" =>
+        val stream = readJsonFromFile(nationalInsuranceNumber)
+
+        stream match {
+          case Some(value) =>
+            Future.successful(NotFound(value))
+          case None =>
+            Future.successful(InternalServerError)
+        }
+
+      case "AA271213C" =>
+        var responseVariant: String = ""
+
+        if (startTaxYear.equals(2024)) responseVariant = "_1"
+        else if (endTaxYear - startTaxYear > 6) responseVariant = "_2"
+
+        request.body.asJson match {
+          case Some(json) =>
+            json.validate[NICCRequestPayload] match {
+              case JsSuccess(data, _) =>
+                if (data.dateOfBirth.getYear.equals(8888)) responseVariant = "_3"
+
+              case JsError(_) =>
+                Future.successful(InternalServerError)
+            }
+
+          case _ =>
+            Future.successful(InternalServerError)
+        }
+
+        val stream = readJsonFromFile(s"${nationalInsuranceNumber}${responseVariant}")
+
+        stream match {
+          case Some(value) =>
+            responseVariant match {
+              case "_3" =>
+                Future.successful(BadRequest(value))
+              case _ =>
+                Future.successful(UnprocessableEntity(value))
+            }
+          case None =>
+            Future.successful(InternalServerError)
+        }
+
+      case "BB000200A" =>
+        val nIContributionsList = new mutable.ListBuffer[NICCClass1]()
+        val nICreditList = new mutable.ListBuffer[NICCClass2]()
+
+        nIContributionsList += new NICCClass1(2022,
           "s",
           "(NONE)",
           "C1",
@@ -49,7 +147,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
           "COMPLIANCE & YIELD INCOMPLETE",
           99999999999999.98)
 
-        nICreditList += new NIClass2(2022,
+        nICreditList += new NICCClass2(2022,
           53,
           "C2",
           99999999999999.98,
@@ -90,10 +188,10 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
 
         Future.successful(Ok(jsonResponse))
       case "BB000200B" | "BB000200" =>
-        val nIContributionsList = new mutable.ListBuffer[NIClass1]()
-        val nICreditList = new mutable.ListBuffer[NIClass2]()
+        val nIContributionsList = new mutable.ListBuffer[NICCClass1]()
+        val nICreditList = new mutable.ListBuffer[NICCClass2]()
 
-        nIContributionsList += new NIClass1(2022,
+        nIContributionsList += new NICCClass1(2022,
           "s",
           "(NONE)",
           "C1",
@@ -101,7 +199,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
           "COMPLIANCE & YIELD INCOMPLETE",
           99999999999999.98)
 
-        nICreditList += new NIClass2(2022,
+        nICreditList += new NICCClass2(2022,
           53,
           "C2",
           99999999999999.98,
@@ -158,8 +256,17 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
     }
   }
 
-  private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NIClass1],
-                                      nICreditList: Option[mutable.ListBuffer[NIClass2]]): JsObject = {
+  private def readJsonFromFile(nationalInsuranceNumber: String): Option[JsValue] = {
+    val file = Files.exists(Paths.get(s"app/assets/jsons/${nationalInsuranceNumber}.json"))
+    file match {
+      case true =>
+        Option(Source.fromFile(s"app/assets/jsons/${nationalInsuranceNumber}.json").getLines.mkString).map(Json.parse)
+      case _ => None
+    }
+  }
+
+  private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NICCClass1],
+                                      nICreditList: Option[mutable.ListBuffer[NICCClass2]]): JsObject = {
     builder.clear()
 
     builder += ("niClass1" -> niContributionsList)
