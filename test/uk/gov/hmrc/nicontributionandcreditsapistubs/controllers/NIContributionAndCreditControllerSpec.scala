@@ -30,6 +30,7 @@ import play.api.test.Helpers._
 class NIContributionAndCreditControllerSpec extends AnyFreeSpec with GuiceOneAppPerSuite with OptionValues with ScalaFutures with should.Matchers with BeforeAndAfterEach {
   override def fakeApplication(): Application = GuiceApplicationBuilder().build()
 
+
   "Must return 200 when the request is valid, contains NINO with suffix and response is valid" in {
     val body = Json.obj("dateOfBirth" -> "1998-04-23")
 
