@@ -123,7 +123,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents, json
                 Future.successful(UnprocessableEntity(value))
             }
           case None =>
-            Future.successful(NotFound(jsonUtils.readJsonFile(s"conf/resources/data/jsons/NOT_FOUND.json")))
+            Future.successful(InternalServerError)
         }
 
       case "BB000200A" =>
