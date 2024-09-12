@@ -17,20 +17,19 @@
 package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 
 import play.api.Logging
-import play.api.libs.json._
-import play.api.mvc.{Action, AnyContent, ControllerComponents}
+import play.api.libs.json.{JsError, JsObject, JsSuccess, Json}
+import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models._
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors.{Failure, Failures, HIPFailure, HIPFailures}
+import uk.gov.hmrc.nicontributionandcreditsapistubs.utils.JsonUtils
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
-import java.nio.file.{Files, Paths}
 import javax.inject.{Inject, Singleton}
 import scala.collection.mutable
 import scala.concurrent.Future
-import scala.io.Source
 
 @Singleton()
-class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
+class NIContributionAndCreditController @Inject()(cc: ControllerComponents, jsonUtils: JsonUtils)
   extends BackendController(cc) with Logging {
 
   private val builder = Json.newBuilder
@@ -41,7 +40,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
 
     nationalInsuranceNumber match {
       case "NY634367C" | "WP103133" =>
-        val stream = readJsonFromFile(nationalInsuranceNumber)
+        val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/$nationalInsuranceNumber.json")
 
         stream match {
           case Some(value) =>
@@ -53,22 +52,17 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
       case "JA000017B" | "JA000017" =>
         var responseVariant = ""
 
-        request.body.asJson match {
-          case Some(json) =>
-            json.validate[NICCRequestPayload] match {
-              case JsSuccess(data, _) =>
-                if (data.dateOfBirth.toString.equals("1956-10-03")) responseVariant = "_1"
-                else responseVariant = "_2"
-
-              case JsError(_) =>
-                Future.successful(InternalServerError)
-            }
-
+        getDateOfBirthFromRequestBody(request) match {
+          case Some(data) =>
+            if (data.dateOfBirth.toString.equals("1956-10-03")) responseVariant = "_1"
+            else responseVariant = "_2"
           case _ =>
             Future.successful(InternalServerError)
         }
 
-        val stream = readJsonFromFile(s"JA000017B${responseVariant}")
+        getDateOfBirthFromRequestBody(request)
+
+        val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/JA000017B$responseVariant.json")
 
         stream match {
           case Some(value) =>
@@ -82,24 +76,21 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
             Future.successful(InternalServerError)
         }
       case "BE699233A" =>
-        val stream = readJsonFromFile(nationalInsuranceNumber)
+        if (startTaxYear > 1975) {
+          Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
+        } else {
+          val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/$nationalInsuranceNumber.json")
 
-        stream match {
-          case Some(value) =>
-            Future.successful(UnprocessableEntity(value))
-          case None =>
-            Future.successful(InternalServerError)
+          stream match {
+            case Some(value) =>
+              Future.successful(UnprocessableEntity(value))
+            case None =>
+              Future.successful(InternalServerError)
+          }
         }
 
       case "AA123456C" =>
-        val stream = readJsonFromFile(nationalInsuranceNumber)
-
-        stream match {
-          case Some(value) =>
-            Future.successful(NotFound(value))
-          case None =>
-            Future.successful(InternalServerError)
-        }
+        Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
       case "AA271213C" =>
         var responseVariant: String = ""
@@ -121,7 +112,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
             Future.successful(InternalServerError)
         }
 
-        val stream = readJsonFromFile(s"${nationalInsuranceNumber}${responseVariant}")
+        val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/$nationalInsuranceNumber$responseVariant.json")
 
         stream match {
           case Some(value) =>
@@ -132,7 +123,7 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
                 Future.successful(UnprocessableEntity(value))
             }
           case None =>
-            Future.successful(InternalServerError)
+            Future.successful(NotFound(jsonUtils.readJsonFile(s"conf/resources/data/jsons/NOT_FOUND.json")))
         }
 
       case "BB000200A" =>
@@ -256,15 +247,6 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
     }
   }
 
-  private def readJsonFromFile(nationalInsuranceNumber: String): Option[JsValue] = {
-    val file = Files.exists(Paths.get(s"app/assets/jsons/${nationalInsuranceNumber}.json"))
-    file match {
-      case true =>
-        Option(Source.fromFile(s"app/assets/jsons/${nationalInsuranceNumber}.json").getLines.mkString).map(Json.parse)
-      case _ => None
-    }
-  }
-
   private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NICCClass1],
                                       nICreditList: Option[mutable.ListBuffer[NICCClass2]]): JsObject = {
     builder.clear()
@@ -273,6 +255,18 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents)
     builder += ("niClass2" -> nICreditList)
 
     builder.result()
+  }
+
+
+  def getDateOfBirthFromRequestBody(request: Request[AnyContent]): Option[NICCRequestPayload] = {
+    request.body.asJson match {
+      case Some(json) =>
+        json.validate[NICCRequestPayload] match {
+          case JsSuccess(data, _) => Some(data)
+          case JsError(_) => None
+        }
+      case _ => None
+    }
   }
 
   private def buildFailuresResponse(failuresList: mutable.ListBuffer[Failure]): JsObject = {
