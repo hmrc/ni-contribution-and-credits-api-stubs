@@ -17,244 +17,25 @@
 package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 
 import play.api.Logging
-import play.api.libs.json.{JsError, JsObject, JsSuccess, Json}
+import play.api.libs.json.{JsError, JsSuccess}
 import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models._
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors.{Failure, Failures, HIPFailure, HIPFailures}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.utils.JsonUtils
+import uk.gov.hmrc.nicontributionandcreditsapistubs.services.NIContributionAndCreditService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
-import scala.collection.mutable
-import scala.concurrent.Future
 
 @Singleton()
-class NIContributionAndCreditController @Inject()(cc: ControllerComponents, jsonUtils: JsonUtils)
+class NIContributionAndCreditController @Inject()(cc: ControllerComponents,
+                                                  nIContributionAndCreditService: NIContributionAndCreditService)
   extends BackendController(cc) with Logging {
 
-  private val builder = Json.newBuilder
 
   def contributionsAndCredits(nationalInsuranceNumber: String,
                               startTaxYear: Int,
                               endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
 
-    nationalInsuranceNumber match {
-      case "NY634367C" | "WP103133" =>
-        val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/$nationalInsuranceNumber.json")
-
-        stream match {
-          case Some(value) =>
-            Future.successful(Ok(value))
-          case None =>
-            Future.successful(InternalServerError)
-        }
-
-      case "JA000017B" | "JA000017" =>
-        var responseVariant = ""
-
-        getDateOfBirthFromRequestBody(request) match {
-          case Some(data) =>
-            if (data.dateOfBirth.toString.equals("1956-10-03")) responseVariant = "_1"
-            else responseVariant = "_2"
-          case _ =>
-            Future.successful(InternalServerError)
-        }
-
-        getDateOfBirthFromRequestBody(request)
-
-        val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/JA000017B$responseVariant.json")
-
-        stream match {
-          case Some(value) =>
-            responseVariant match {
-              case "_1" =>
-                Future.successful(Ok(value))
-              case "_2" =>
-                Future.successful(NotFound(value))
-            }
-          case None =>
-            Future.successful(InternalServerError)
-        }
-      case "BE699233A" =>
-        if (startTaxYear > 1975) {
-          Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
-        } else {
-          val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/$nationalInsuranceNumber.json")
-
-          stream match {
-            case Some(value) =>
-              Future.successful(UnprocessableEntity(value))
-            case None =>
-              Future.successful(InternalServerError)
-          }
-        }
-
-      case "AA123456C" =>
-        Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
-
-      case "AA271213C" =>
-        var responseVariant: String = ""
-
-        if (startTaxYear.equals(2024)) responseVariant = "_1"
-        else if (endTaxYear - startTaxYear > 6) responseVariant = "_2"
-
-        request.body.asJson match {
-          case Some(json) =>
-            json.validate[NICCRequestPayload] match {
-              case JsSuccess(data, _) =>
-                if (data.dateOfBirth.getYear.equals(8888)) responseVariant = "_3"
-
-              case JsError(_) =>
-                Future.successful(InternalServerError)
-            }
-
-          case _ =>
-            Future.successful(InternalServerError)
-        }
-
-        val stream = jsonUtils.readJsonIfFileFound(s"conf/resources/data/jsons/$nationalInsuranceNumber$responseVariant.json")
-
-        stream match {
-          case Some(value) =>
-            responseVariant match {
-              case "_3" =>
-                Future.successful(BadRequest(value))
-              case _ =>
-                Future.successful(UnprocessableEntity(value))
-            }
-          case None =>
-            Future.successful(InternalServerError)
-        }
-
-      case "BB000200A" =>
-        val nIContributionsList = new mutable.ListBuffer[NICCClass1]()
-        val nICreditList = new mutable.ListBuffer[NICCClass2]()
-
-        nIContributionsList += new NICCClass1(2022,
-          "s",
-          "(NONE)",
-          "C1",
-          99999999999999.98,
-          "COMPLIANCE & YIELD INCOMPLETE",
-          99999999999999.98)
-
-        nICreditList += new NICCClass2(2022,
-          53,
-          "C2",
-          99999999999999.98,
-          99999999999999.98,
-          "NOT KNOWN/NOT APPLICABLE")
-        val jsonResponse = Json.parse("" +
-          "{" +
-          "  \"niClass1\": [" +
-          "    {" +
-          "      \"taxYear\": 2018," +
-          "      \"contributionCategoryLetter\": \"A\"," +
-          "      \"contributionCategory\": \"STANDARD RATE\"," +
-          "      \"primaryContribution\": 3189.12," +
-          "      \"class1ContributionStatus\": \"VALID\"," +
-          "      \"primaryPaidEarnings\": 35000," +
-          "      \"contributionCreditType\": \"EON\"" +
-          "    }," +
-          "    {" +
-          "      \"taxYear\": 2019," +
-          "      \"contributionCategoryLetter\": \"A\"," +
-          "      \"contributionCategory\": \"STANDARD RATE\"," +
-          "      \"primaryContribution\": 1964.16," +
-          "      \"class1ContributionStatus\": \"VALID\"," +
-          "      \"primaryPaidEarnings\": 25000," +
-          "      \"contributionCreditType\": \"EON\"" +
-          "    }," +
-          "    {" +
-          "      \"taxYear\": 2020," +
-          "      \"contributionCategoryLetter\": \"A\"," +
-          "      \"contributionCategory\": \"STANDARD RATE\"," +
-          "      \"primaryContribution\": 1964.16," +
-          "      \"class1ContributionStatus\": \"VALID\"," +
-          "      \"primaryPaidEarnings\": 25000," +
-          "      \"contributionCreditType\": \"C1\"" +
-          "    }" +
-          "  ]" +
-          "}")
-
-        Future.successful(Ok(jsonResponse))
-      case "BB000200B" | "BB000200" =>
-        val nIContributionsList = new mutable.ListBuffer[NICCClass1]()
-        val nICreditList = new mutable.ListBuffer[NICCClass2]()
-
-        nIContributionsList += new NICCClass1(2022,
-          "s",
-          "(NONE)",
-          "C1",
-          99999999999999.98,
-          "COMPLIANCE & YIELD INCOMPLETE",
-          99999999999999.98)
-
-        nICreditList += new NICCClass2(2022,
-          53,
-          "C2",
-          99999999999999.98,
-          99999999999999.98,
-          "NOT KNOWN/NOT APPLICABLE")
-
-        Future.successful(Ok(buildSuccessfulResponse(nIContributionsList, Some(nICreditList))))
-      case "BB000408A" =>
-        Thread.sleep(10000)
-        Future.successful(RequestTimeout)
-      case "BB000400A" =>
-
-        val origin = "HIP"
-        val response = new HIPFailures(
-          Seq(HIPFailure("HTTP message not readable", ""), HIPFailure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
-        )
-
-        Future.successful(BadRequest(buildHIPErrorResponse(origin, response)))
-      case "BB000400B" =>
-
-        val origin = "HoD"
-        val response = new Failures(
-          Seq(Failure("HTTP message not readable", ""), Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
-        )
-
-        Future.successful(BadRequest(buildErrorResponse(origin, response)))
-      case "BB000401B" =>
-        val failuresList = new mutable.ListBuffer[Failure]()
-        failuresList += new Failure("Unauthorised", "Invalid Credentials")
-
-        Future.successful(Unauthorized(buildFailuresResponse(failuresList)))
-      case "BB000403B" =>
-        val failure = Json.toJson(new Failure("Forbidden", "403.2"))
-
-        Future.successful(Unauthorized(failure))
-      case "BB000404B" =>
-        Future.successful(NotFound)
-      case "BB000422B" =>
-        val failuresList = new mutable.ListBuffer[Failure]()
-        failuresList += new Failure("Start tax year after end tax year", "63496")
-
-        Future.successful(UnprocessableEntity(buildFailuresResponse(failuresList)))
-      case "BB000503B" =>
-
-        val origin = "HIP"
-        val response = new Failures(
-          Seq(Failure("HTTP message not readable", ""), Failure("Constraint Violation - Invalid/Missing input parameter", "BAD_REQUEST"))
-        )
-
-
-        Future.successful(ServiceUnavailable(buildErrorResponse(origin, response)))
-      case _ =>
-        Future.successful(InternalServerError)
-    }
-  }
-
-  private def buildSuccessfulResponse(niContributionsList: mutable.ListBuffer[NICCClass1],
-                                      nICreditList: Option[mutable.ListBuffer[NICCClass2]]): JsObject = {
-    builder.clear()
-
-    builder += ("niClass1" -> niContributionsList)
-    builder += ("niClass2" -> nICreditList)
-
-    builder.result()
+    nIContributionAndCreditService.statusMapping(nationalInsuranceNumber, startTaxYear, endTaxYear, getDateOfBirthFromRequestBody(request).get)
   }
 
 
@@ -267,26 +48,6 @@ class NIContributionAndCreditController @Inject()(cc: ControllerComponents, json
         }
       case _ => None
     }
-  }
-
-  private def buildFailuresResponse(failuresList: mutable.ListBuffer[Failure]): JsObject = {
-    builder.clear()
-    builder += ("failures" -> failuresList)
-    builder.result()
-  }
-
-  private def buildHIPErrorResponse(origin: String, failuresResponse: HIPFailures): JsObject = {
-    builder.clear()
-    builder += ("origin" -> origin)
-    builder += ("response" -> failuresResponse)
-    builder.result()
-  }
-
-  private def buildErrorResponse(origin: String, failuresResponse: Failures): JsObject = {
-    builder.clear()
-    builder += ("origin" -> origin)
-    builder += ("response" -> failuresResponse)
-    builder.result()
   }
 
 }
