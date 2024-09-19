@@ -41,7 +41,8 @@ class NIContributionAndCreditService @Inject()(jsonUtils: JsonUtils) {
     else if (endTaxYear - startTaxYear > 6) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_2.json")))
     else if (niccRequestPayload.dateOfBirth.getYear >= cal.get(Calendar.YEAR) - 16) Future.successful(BadRequest(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_3.json")))
     else if (startTaxYear < 1975) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/BE699233.json")))
-    else
+    else {
+
       nationalInsuranceNumber match {
         case x if x.startsWith("NY634367") =>
           val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
@@ -180,9 +181,38 @@ class NIContributionAndCreditService @Inject()(jsonUtils: JsonUtils) {
 
 
           Future.successful(ServiceUnavailable(buildErrorResponse(origin, response)))
+        case x if x.startsWith("RN001856") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+
+        case x if x.startsWith("RN001857") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001859") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001965") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001966") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001967") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001969") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001970") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
+        case x if x.startsWith("RN001973") =>
+          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          Future.successful(Ok(response))
         case _ =>
           Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
       }
+    }
   }
 
 
