@@ -1,0 +1,20 @@
+{
+  "niClass2": [
+    {
+      "taxYear": 1994,
+      "noOfCreditsAndConts": 10,
+      "contributionCreditType": "2A",
+      "class2Or3EarningsFactor": 570.00,
+      "class2NicAmount": 56.50,
+      "class2Or3CreditStatus": "VALID"
+    },
+    {
+      "taxYear": 1995,
+      "noOfCreditsAndConts": 5,
+      "contributionCreditType": "SF",
+      "class2Or3EarningsFactor": 290.00,
+      "class2NicAmount": 36.50,
+      "class2Or3CreditStatus": "VALID"
+    }
+  ]
+}

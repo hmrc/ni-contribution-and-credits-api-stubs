@@ -1,0 +1,22 @@
+{
+  "niClass1": [
+    {
+      "taxYear": 2019,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 0.00,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 2950.00,
+      "contributionCreditType": "EON"
+    },
+    {
+      "taxYear": 2020,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 0.00,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 1000.00,
+      "contributionCreditType": "C1"
+    }
+  ]
+}
