@@ -1,0 +1,31 @@
+{
+  "niClass1": [
+    {
+      "taxYear": 2014,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 0.00,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 6000.00,
+      "contributionCreditType": "HMF"
+    },
+    {
+      "taxYear": 2015,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 2632.80,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 30000.00,
+      "contributionCreditType": "EON"
+    },
+    {
+      "taxYear": 2016,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 2620.32,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 30000.00,
+      "contributionCreditType": "C1"
+    }
+  ]
+}

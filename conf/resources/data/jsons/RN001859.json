@@ -1,0 +1,28 @@
+{
+  "niClass2": [
+    {
+      "taxYear": 2020,
+      "noOfCreditsAndConts": 28,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 3360.00,
+      "class2NicAmount": 85.40,
+      "class2Or3CreditStatus": "VALID"
+    },
+    {
+      "taxYear": 2020,
+      "noOfCreditsAndConts": 30,
+      "contributionCreditType": "C2W",
+      "class2Or3EarningsFactor": 3600.00,
+      "class2NicAmount": 0.00,
+      "class2Or3CreditStatus": "VALID"
+    },
+    {
+      "taxYear": 2020,
+      "noOfCreditsAndConts": 26,
+      "contributionCreditType": "2C",
+      "class2Or3EarningsFactor": 3120.00,
+      "class2NicAmount": 0.00,
+      "class2Or3CreditStatus": "VALID"
+    }
+  ]
+}

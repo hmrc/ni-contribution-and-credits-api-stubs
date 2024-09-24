@@ -1,0 +1,31 @@
+{
+  "niClass1": [
+    {
+      "taxYear": 2011,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 1487.40,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 20000.00,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2012,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 1487.40,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 20000.00,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2013,
+      "contributionCategoryLetter": "C",
+      "contributionCategory": "ZERO RATE",
+      "primaryContribution": 1604.80,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 20000.00,
+      "contributionCreditType": "CS"
+    }
+  ]
+}

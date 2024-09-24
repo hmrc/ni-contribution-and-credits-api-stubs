@@ -1,0 +1,13 @@
+{
+  "niClass1": [
+    {
+      "taxYear": 1975,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 27.50,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 500.00,
+      "contributionCreditType": "C1"
+    }
+  ]
+}
