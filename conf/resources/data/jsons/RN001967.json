@@ -1,1 +1,58 @@
-{}
+{
+  "niClass1": [
+    {
+      "taxYear": 2016,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 2620.32,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 30000.00,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2016,
+      "contributionCategoryLetter": "X",
+      "contributionCategory": "NO LIABILITY",
+      "primaryContribution": 0.00,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0.00,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2017,
+      "contributionCategoryLetter": "B",
+      "contributionCategory": "REDUCED RATE",
+      "primaryContribution": 2000.00,
+      "class1ContributionStatus": "INVALID COMPATIBILITY CHECK",
+      "primaryPaidEarnings": 30000.00,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2018,
+      "contributionCategoryLetter": "O",
+      "contributionCategory": "NOT FEASIBLE",
+      "primaryContribution": 3189.12,
+      "class1ContributionStatus": "INVALID - NO RCF",
+      "primaryPaidEarnings": 35000.00,
+      "contributionCreditType": "EON"
+    },
+    {
+      "taxYear": 2019,
+      "contributionCategoryLetter": "T",
+      "contributionCategory": "REDUCED RATE",
+      "primaryContribution": 1500.00,
+      "class1ContributionStatus": "INVALID COMPATIBILITY CHECK",
+      "primaryPaidEarnings": 25000.00,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2020,
+      "contributionCategoryLetter": "X",
+      "contributionCategory": "NO LIABILITY",
+      "primaryContribution": 0.00,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0.00,
+      "contributionCreditType": "C1"
+    }
+  ]
+}

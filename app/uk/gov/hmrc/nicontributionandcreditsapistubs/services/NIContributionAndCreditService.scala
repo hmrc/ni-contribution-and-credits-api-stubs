@@ -16,11 +16,11 @@
 
 package uk.gov.hmrc.nicontributionandcreditsapistubs.services
 
-import play.api.libs.json.{JsObject, Json}
+import play.api.libs.json.{JsError, JsObject, JsSuccess, Json}
 import play.api.mvc.Result
 import play.api.mvc.Results._
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors.{Failure, Failures, HIPFailure, HIPFailures}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{NICCClass1, NICCClass2, NICCRequestPayload}
+import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{NICCClass1, NICCClass2, NICCRequestPayload, NPSResponse}
 import uk.gov.hmrc.nicontributionandcreditsapistubs.utils.JsonUtils
 
 import java.util.Calendar
@@ -38,26 +38,27 @@ class NIContributionAndCreditService @Inject()(jsonUtils: JsonUtils) {
     val cal = Calendar.getInstance()
 
     if (startTaxYear >= cal.get(Calendar.YEAR) || endTaxYear >= cal.get(Calendar.YEAR)) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_1.json")))
-    else if (endTaxYear - startTaxYear > 6) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_2.json")))
+    else if (startTaxYear > endTaxYear) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/START_YEAR_AFTER_END_YEAR.json")))
+    else if (endTaxYear - startTaxYear >= 6) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_2.json")))
     else if (niccRequestPayload.dateOfBirth.getYear >= cal.get(Calendar.YEAR) - 16) Future.successful(BadRequest(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_3.json")))
     else if (startTaxYear < 1975) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/BE699233.json")))
     else
       nationalInsuranceNumber match {
         case x if x.startsWith("NY634367") =>
-          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/NY634367.json")
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/NY634367.json")
 
           if (niccRequestPayload.dateOfBirth.toString.equals("1999-01-27")) Future.successful(Ok(response))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("WP103133") =>
-          val response = jsonUtils.readJsonFile(s"conf/resources/data/jsons/WP103133.json")
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/WP103133.json")
 
           if (niccRequestPayload.dateOfBirth.toString.equals("1970-03-12")) Future.successful(Ok(response))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("JA000017") =>
 
-          if (niccRequestPayload.dateOfBirth.toString.equals("1956-10-03")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/JA000017.json")))
+          if (niccRequestPayload.dateOfBirth.toString.equals("1956-10-03")) Future.successful(Ok(jsonUtils.readJsonFile("conf/resources/data/jsons/JA000017.json")))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("AA271213") =>
@@ -65,28 +66,54 @@ class NIContributionAndCreditService @Inject()(jsonUtils: JsonUtils) {
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("RN001856") =>
-          if (niccRequestPayload.dateOfBirth.toString.equals("1958-01-19")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001856.json")))
+          if (niccRequestPayload.dateOfBirth.toString.equals("1958-01-19")) Future.successful(Ok(jsonUtils.readJsonFile("conf/resources/data/jsons/RN001856.json")))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("RN001857") =>
-          if (niccRequestPayload.dateOfBirth.toString.equals("1980-04-18")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001857.json")))
+          if (niccRequestPayload.dateOfBirth.toString.equals("1980-04-18")) Future.successful(Ok(jsonUtils.readJsonFile("conf/resources/data/jsons/RN001857.json")))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("RN001859") =>
-          if (niccRequestPayload.dateOfBirth.toString.equals("1967-07-22")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001859.json")))
+          if (niccRequestPayload.dateOfBirth.toString.equals("1967-07-22")) Future.successful(Ok(jsonUtils.readJsonFile("conf/resources/data/jsons/RN001859.json")))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("RN001965") =>
-          if (niccRequestPayload.dateOfBirth.toString.equals("1958-12-25")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001965.json")))
+          if (niccRequestPayload.dateOfBirth.toString.equals("1958-12-25")) Future.successful(Ok(jsonUtils.readJsonFile("conf/resources/data/jsons/RN001965.json")))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("RN001966") =>
-          if (niccRequestPayload.dateOfBirth.toString.equals("1970-02-16")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001966.json")))
+          if (niccRequestPayload.dateOfBirth.toString.equals("1970-02-16")) Future.successful(Ok(jsonUtils.readJsonFile("conf/resources/data/jsons/RN001966.json")))
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
-        //TODO with years filtering
         case x if x.startsWith("RN001967") =>
-          if (niccRequestPayload.dateOfBirth.toString.equals("1985-10-19")) Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001967.json")))
+
+          if (niccRequestPayload.dateOfBirth.toString.equals("1985-10-19")) {
+            val jsonResponse = jsonUtils.readJsonFile(s"conf/resources/data/jsons/RN001967.json")
+            val npsResponse: Option[NPSResponse] = jsonResponse.validate[NPSResponse] match {
+              case JsSuccess(data, _) => Some(data)
+              //
+              case JsError(_) => None
+            }
+
+            npsResponse match {
+              case Some(npsResponse) =>
+                val requestedClass1: Option[Seq[NICCClass1]] = npsResponse.niClass1 match {
+                  case Some(data) =>
+                    Option(data.filter(niClass1 => niClass1.taxYear >= startTaxYear && niClass1.taxYear <= endTaxYear)).filter(_.nonEmpty)
+
+                  case _ => None
+                }
+                val requestedClass2: Option[Seq[NICCClass2]] = npsResponse.niClass2 match {
+                  case Some(data) =>
+                    Option(data.filter(niClass2 => niClass2.taxYear >= startTaxYear && niClass2.taxYear <= endTaxYear)).filter(_.nonEmpty)
+                  case _ => None
+                }
+
+                Future.successful(Ok(Json.toJson(new NPSResponse(requestedClass1, requestedClass2))))
+
+              case _ => Future.successful(InternalServerError)
+            }
+          }
           else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
 
         case x if x.startsWith("RN001969") =>
