@@ -37,7 +37,8 @@ class NIContributionAndCreditService @Inject()(jsonUtils: JsonUtils) {
 
     val cal = Calendar.getInstance()
 
-    if (startTaxYear >= cal.get(Calendar.YEAR) || endTaxYear >= cal.get(Calendar.YEAR)) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_1.json")))
+    if (startTaxYear >= cal.get(Calendar.YEAR)) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_1.json")))
+    else if (endTaxYear >= cal.get(Calendar.YEAR)) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/END_TAX_YEAR_AFTER_CY-1.json")))
     else if (startTaxYear > endTaxYear) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/START_YEAR_AFTER_END_YEAR.json")))
     else if (endTaxYear - startTaxYear >= 6) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_2.json")))
     else if (niccRequestPayload.dateOfBirth.getYear >= cal.get(Calendar.YEAR) - 16) Future.successful(BadRequest(jsonUtils.readJsonFile("conf/resources/data/jsons/AA271213_3.json")))
