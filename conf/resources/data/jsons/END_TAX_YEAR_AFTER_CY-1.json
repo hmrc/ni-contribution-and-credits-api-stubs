@@ -1,0 +1,8 @@
+{
+  "failures": [
+    {
+      "reason": "End tax year after CY-1",
+      "code": "63499"
+    }
+  ]
+}
