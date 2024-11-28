@@ -1,0 +1,74 @@
+{
+  "niClass1": [
+    {
+      "taxYear": 2005,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 1234.56,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12345,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2006,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 1234.56,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12345,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2007,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12345,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2008,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 1234.56,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12345,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2009,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 1234.56,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12345,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2010,
+      "contributionCategoryLetter": "X",
+      "contributionCategory": "NO LIABILITY",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2010,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "primaryContribution": 123.71,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12345,
+      "contributionCreditType": "C1"
+    },
+    {
+      "taxYear": 2010,
+      "contributionCategoryLetter": "X",
+      "contributionCategory": "NO LIABILITY",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "contributionCreditType": "C1"
+    }
+  ]
+}
