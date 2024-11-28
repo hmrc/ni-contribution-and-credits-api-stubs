@@ -45,6 +45,37 @@ class NIContributionAndCreditService @Inject()(jsonUtils: JsonUtils) {
     else if (startTaxYear < 1975) Future.successful(UnprocessableEntity(jsonUtils.readJsonFile("conf/resources/data/jsons/BE699233.json")))
     else
       nationalInsuranceNumber match {
+        case x if x.startsWith("TX000200A") =>
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/TX000200A.json")
+
+          if (niccRequestPayload.dateOfBirth.toString.equals("1999-01-27")) Future.successful(Ok(response))
+          else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
+
+        case x if x.startsWith("TX000200B") =>
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/TX000200B.json")
+
+          if (niccRequestPayload.dateOfBirth.toString.equals("1999-01-27")) Future.successful(Ok(response))
+          else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
+
+        case x if x.startsWith("TX000200C") =>
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/TX000200C.json")
+
+          if (niccRequestPayload.dateOfBirth.toString.equals("1999-01-27")) Future.successful(Ok(response))
+          else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
+
+        case x if x.startsWith("TX000200D") =>
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/TX000200D.json")
+
+          if (niccRequestPayload.dateOfBirth.toString.equals("1999-01-27")) Future.successful(Ok(response))
+          else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
+
+        case x if x.startsWith("TR000200A") =>
+          val response = jsonUtils.readJsonFile("conf/resources/data/jsons/TR000200A.json")
+
+          if (niccRequestPayload.dateOfBirth.toString.equals("1999-01-27")) Future.successful(Ok(response))
+          else Future.successful(NotFound(jsonUtils.readJsonFile("conf/resources/data/jsons/NOT_FOUND.json")))
+
+
         case x if x.startsWith("NY634367") =>
           val response = jsonUtils.readJsonFile("conf/resources/data/jsons/NY634367.json")
 
