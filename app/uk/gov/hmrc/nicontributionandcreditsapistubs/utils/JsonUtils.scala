@@ -23,11 +23,11 @@ import play.api.libs.json.{JsValue, Json}
 import java.io.{FileInputStream, InputStream}
 import scala.io.Source
 
-class JsonUtils @Inject()(environment: Environment) {
+class JsonUtils @Inject() (environment: Environment) {
 
   def readJsonFile(filePath: String): JsValue = {
     val jsonSchemaFile = environment.getFile(filePath)
-    val inputStream = new FileInputStream(jsonSchemaFile)
+    val inputStream    = new FileInputStream(jsonSchemaFile)
     Json.parse(readStreamToString(inputStream))
   }
 
@@ -39,7 +39,7 @@ class JsonUtils @Inject()(environment: Environment) {
     val jsonSchemaFile = environment.getExistingFile(filePath)
     jsonSchemaFile match {
       case Some(schemaFile) =>
-        val inputStream = new FileInputStream(schemaFile)
+        val inputStream        = new FileInputStream(schemaFile)
         val jsonString: String = readStreamToString(inputStream)
         Some(Json.parse(jsonString))
       case _ =>
