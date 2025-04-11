@@ -26,28 +26,30 @@ import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import javax.inject.{Inject, Singleton}
 
 @Singleton()
-class NIContributionAndCreditController @Inject()(cc: ControllerComponents,
-                                                  nIContributionAndCreditService: NIContributionAndCreditService)
-  extends BackendController(cc) with Logging {
+class NIContributionAndCreditController @Inject() (
+    cc: ControllerComponents,
+    nIContributionAndCreditService: NIContributionAndCreditService
+) extends BackendController(cc)
+    with Logging {
 
+  def contributionsAndCredits(nationalInsuranceNumber: String, startTaxYear: Int, endTaxYear: Int): Action[AnyContent] =
+    Action.async { implicit request =>
+      nIContributionAndCreditService.statusMapping(
+        nationalInsuranceNumber,
+        startTaxYear,
+        endTaxYear,
+        getDateOfBirthFromRequestBody(request).get
+      )
+    }
 
-  def contributionsAndCredits(nationalInsuranceNumber: String,
-                              startTaxYear: Int,
-                              endTaxYear: Int): Action[AnyContent] = Action.async { implicit request =>
-
-    nIContributionAndCreditService.statusMapping(nationalInsuranceNumber, startTaxYear, endTaxYear, getDateOfBirthFromRequestBody(request).get)
-  }
-
-
-  def getDateOfBirthFromRequestBody(request: Request[AnyContent]): Option[NICCRequestPayload] = {
+  def getDateOfBirthFromRequestBody(request: Request[AnyContent]): Option[NICCRequestPayload] =
     request.body.asJson match {
       case Some(json) =>
         json.validate[NICCRequestPayload] match {
           case JsSuccess(data, _) => Some(data)
-          case JsError(_) => None
+          case JsError(_)         => None
         }
       case _ => None
     }
-  }
 
 }
