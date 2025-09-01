@@ -9,9 +9,13 @@ lazy val microservice = Project("ni-contribution-and-credits-api-stubs", file(".
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     // https://www.scala-lang.org/2021/01/12/configuring-and-suppressing-warnings.html
     // suppress warnings in generated routes files
-    scalacOptions += "-Wconf:src=routes/.*:s"
+    scalacOptions ++= Seq(
+      "-feature",
+      "-Wconf:cat=unused-imports&src=routes/.*:s",
+      "-Wconf:cat=unused-imports&src=html/.*:s",
+      "-Wconf:cat=unused&src=routes/.*:s"
+    ),
   )
-  .settings(resolvers += Resolver.jcenterRepo)
   .settings(CodeCoverageSettings.settings: _*)
   .settings(PlayKeys.playDefaultPort := 16106)
 
