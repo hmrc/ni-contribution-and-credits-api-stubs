@@ -1,3 +1,6 @@
 # microservice specific routes
 
+# microservice specific routes
+
 POST       /nps/nps-json-service/nps/v1/api/national-insurance/:nationalInsuranceNumber/contributions-and-credits/from/:startTaxYear/to/:endTaxYear             uk.gov.hmrc.nicontributionandcreditsapistubs.controllers.NIContributionAndCreditController.contributionsAndCredits(nationalInsuranceNumber: String, startTaxYear: Int, endTaxYear: Int)
+GET       /nps/nps-json-service/nps/v1/api/class-2/:identifier/maternity-allowance/receipts             uk.gov.hmrc.nicontributionandcreditsapistubs.controllers.Class2maReceiptsController.class2maReceipts(identifier: String, latest: Option[Boolean], receiptDate: Option[String], type : Option[String])
