@@ -1,5 +1,5 @@
 /*
- * Copyright 2026 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.models.c2mar
+package uk.gov.hmrc.config
 
-import play.api.libs.json._
+import play.api.Configuration
 
-import java.time.LocalDate
+import javax.inject.{Inject, Singleton}
 
-object JsonCodecs {
+@Singleton
+class AppConfig @Inject() (config: Configuration) {
 
-  implicit val localDateReads: Reads[LocalDate] =
-    Reads.localDateReads("yyyy-MM-dd")
-
-  implicit val localDateWrites: Writes[LocalDate] =
-    Writes.temporalWrites(
-      java.time.format.DateTimeFormatter.ISO_LOCAL_DATE
-    )
+  val appName: String = config.get[String]("appName")
 }

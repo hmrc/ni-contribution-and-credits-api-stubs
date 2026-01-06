@@ -14,30 +14,34 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
+package uk.gov.hmrc.benefiteligibility.controllers
 
 import play.api.Logging
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.c2mar.EnumSortMAReceiptBy
-import uk.gov.hmrc.nicontributionandcreditsapistubs.services.Class2MaReceiptsService
+import uk.gov.hmrc.benefiteligibility.services.Class2MaReceiptsService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
 
 @Singleton()
-class Class2maReceiptsController @Inject()(
+class Class2maReceiptsController @Inject() (
     cc: ControllerComponents,
     class2MaReceiptsService: Class2MaReceiptsService
 ) extends BackendController(cc)
     with Logging {
 
-  def class2maReceipts(identifier: String, latest: Option[Boolean], receiptDate: Option[String], sortBy : Option[String] ): Action[AnyContent] =
+  def class2maReceipts(
+      identifier: String,
+      latest: Option[Boolean],
+      receiptDate: Option[String],
+      sortBy: Option[String]
+  ): Action[AnyContent] =
     Action.async {
       class2MaReceiptsService.statusMapping(
         identifier,
         latest,
         receiptDate,
-        sortBy.flatMap(EnumSortMAReceiptBy.fromString)
+        sortBy
       )
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2026 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.config
+package uk.gov.hmrc.benefiteligibility.services
 
-import com.google.inject.AbstractModule
+import play.api.mvc.Result
+import play.api.mvc.Results.Ok
+import uk.gov.hmrc.utils.JsonUtils
 
-class Module extends AbstractModule {
+import javax.inject.Inject
+import scala.concurrent.Future
 
-  override def configure(): Unit =
+class Class2MaReceiptsService @Inject() (jsonUtils: JsonUtils) {
 
-    bind(classOf[AppConfig]).asEagerSingleton()
+  def statusMapping(
+      identifier: String,
+      latest: Option[Boolean],
+      receiptDate: Option[String],
+      sortBy: Option[String]
+  ): Future[Result] =
+
+    Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/AA000001A.json")))
 
 }
