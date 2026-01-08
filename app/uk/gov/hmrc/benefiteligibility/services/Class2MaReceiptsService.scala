@@ -27,12 +27,16 @@ import scala.concurrent.Future
 class Class2MaReceiptsService @Inject() (jsonUtils: JsonUtils) {
 
   def mapIdentifierToResponse(
-                              ::qidentifier: String
-                            ): Future[Result] =
+      identifier: String
+  ): Future[Result] =
 
     StubId.withName(identifier) match {
-      case AA000001A => Future.successful(BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/ErrorResponse400.2.json")))
-      case AA000002A => Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/SuccessResponse.json")))
+      case AA000001A =>
+        Future.successful(
+          BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/ErrorResponse400.2.json"))
+        )
+      case AA000002A =>
+        Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/SuccessResponse.json")))
     }
 
 }
