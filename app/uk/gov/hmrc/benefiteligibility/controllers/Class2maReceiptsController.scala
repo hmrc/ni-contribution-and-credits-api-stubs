@@ -37,12 +37,7 @@ class Class2maReceiptsController @Inject() (
       sortBy: Option[String]
   ): Action[AnyContent] =
     Action.async {
-      class2MaReceiptsService.statusMapping(
-        identifier,
-        latest,
-        receiptDate,
-        sortBy
-      )
+      class2MaReceiptsService.mapIdentifierToResponse(identifier)
     }
 
 }

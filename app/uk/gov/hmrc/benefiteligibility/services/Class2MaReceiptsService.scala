@@ -17,7 +17,8 @@
 package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
-import play.api.mvc.Results.Ok
+import play.api.mvc.Results.{BadRequest, Ok}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002A}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -25,13 +26,13 @@ import scala.concurrent.Future
 
 class Class2MaReceiptsService @Inject() (jsonUtils: JsonUtils) {
 
-  def statusMapping(
-      identifier: String,
-      latest: Option[Boolean],
-      receiptDate: Option[String],
-      sortBy: Option[String]
-  ): Future[Result] =
+  def mapIdentifierToResponse(
+                              ::qidentifier: String
+                            ): Future[Result] =
 
-    Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/AA000001A.json")))
+    StubId.withName(identifier) match {
+      case AA000001A => Future.successful(BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/ErrorResponse400.2.json")))
+      case AA000002A => Future.successful(Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/c2mar/SuccessResponse.json")))
+    }
 
 }
