@@ -21,7 +21,7 @@ import play.api.mvc.Result
 import play.api.mvc.Results._
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models.errors.{Failure, Failures, HIPFailure, HIPFailures}
 import uk.gov.hmrc.nicontributionandcreditsapistubs.models.{NICCClass1, NICCClass2, NICCRequestPayload, NPSResponse}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.utils.JsonUtils
+import uk.gov.hmrc.utils.JsonUtils
 
 import java.util.Calendar
 import javax.inject.Inject

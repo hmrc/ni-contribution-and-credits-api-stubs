@@ -1,0 +1,19 @@
+{
+  "identifier": "AA000002A",
+  "class2MAReceiptDetails": [
+    {
+      "initals": "JP",
+      "surname": "van Cholmondley-warner",
+      "receivablePeriodStartDate": "2023-06-27",
+      "receivablePeriodEndDate": "2023-06-27",
+      "receivablePayment": 10.56,
+      "receiptDate": "2023-06-27",
+      "liabilityStartDate": "2023-06-27",
+      "liabilityEndDate": "2023-06-27",
+      "billAmount": 10.56,
+      "billScheduleNumber": 0,
+      "isClosedRecord": true,
+      "weeksPaid": 0
+    }
+  ]
+}
