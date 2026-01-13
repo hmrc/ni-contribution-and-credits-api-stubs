@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.utils
+package uk.gov.hmrc.utils
 
 import com.google.inject.Inject
 import play.api.Environment

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.config
+package uk.gov.hmrc.config
 
 import com.google.inject.AbstractModule
 
