@@ -1,0 +1,24 @@
+{
+  "marriageDetails": {
+    "activeMarriage": true,
+    "marriageDetailsList": [
+      {
+        "sequenceNumber": 1,
+        "status": "CIVIL PARTNER",
+        "startDate": "2020-04-06",
+        "startDateStatus": "VERIFIED",
+        "endDate": "2025-04-06",
+        "endDateStatus": "VERIFIED",
+        "spouseIdentifier": "AA000002",
+        "separationDate": "2025-04-05",
+        "reconciliationDate": "2020-04-07"
+      }
+    ],
+    "_links": {
+      "self": {
+        "href": "/individual/AA000002/marriage-cp",
+        "methods": "get"
+      }
+    }
+  }
+}
