@@ -19,7 +19,6 @@ package uk.gov.hmrc.benefiteligibility.controllers
 import play.api.Logging
 import play.api.libs.json.{JsError, JsSuccess}
 import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
-import uk.gov.hmrc.benefiteligibility.models.PutMarriageDetailsRequest
 import uk.gov.hmrc.benefiteligibility.services.IndividualMarriageDetailsService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
@@ -41,31 +40,7 @@ class IndividualMarriageDetailsController @Inject() (
       sequence: Option[Int]
   ): Action[AnyContent] =
     Action.async {
-      individualMarriageDetailsService.mapIdentifierToGetResponse(identifier)
-    }
-
-  def putIndividualMarriageDetails(
-      identifier: String
-  ): Action[AnyContent] =
-    Action.async { implicit request =>
-      getMarriageStatusFromRequestBody(request) match {
-        case Some(marriageRequest) =>
-          individualMarriageDetailsService
-            .mapIdentifierToPutResponse(identifier, marriageRequest)
-
-        case None =>
-          Future.successful(BadRequest("Invalid JSON body"))
-      }
-    }
-
-  private def getMarriageStatusFromRequestBody(request: Request[AnyContent]): Option[PutMarriageDetailsRequest] =
-    request.body.asJson match {
-      case Some(json) =>
-        json.validate[PutMarriageDetailsRequest] match {
-          case JsSuccess(data, _) => Some(data)
-          case JsError(_)         => None
-        }
-      case _ => None
+      individualMarriageDetailsService.mapIdentifierToResponse(identifier)
     }
 
 }

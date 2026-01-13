@@ -18,7 +18,6 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.models.PutMarriageDetailsRequest
 import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002A}
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -27,7 +26,7 @@ import scala.concurrent.Future
 
 class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
 
-  def mapIdentifierToGetResponse(
+  def mapIdentifierToResponse(
       identifier: String
   ): Future[Result] =
 
@@ -38,23 +37,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
         )
       case AA000002A =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/indMarDetails/get/SuccessResponse.json"))
-        )
-    }
-
-  def mapIdentifierToPutResponse(
-      identifier: String,
-      request: PutMarriageDetailsRequest
-  ): Future[Result] =
-
-    StubId.withName(identifier) match {
-      case AA000001A =>
-        Future.successful(
-          BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/indMarDetails/ErrorResponse400.2.json"))
-        )
-      case AA000002A =>
-        Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/indMarDetails/put/SuccessResponse.json"))
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/indMarDetails/SuccessResponse.json"))
         )
     }
 
