@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 HM Revenue & Customs
+ * Copyright 2026 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,40 +14,45 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
+package uk.gov.hmrc.benefiteligibility.controllers
 
 import play.api.Logging
 import play.api.libs.json.{JsError, JsSuccess}
 import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models.*
-import uk.gov.hmrc.nicontributionandcreditsapistubs.services.NIContributionAndCreditService
+import uk.gov.hmrc.benefiteligibility.models.NiccRequest
+import uk.gov.hmrc.benefiteligibility.services.NiccService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
 
 @Singleton()
-class NIContributionAndCreditController @Inject() (
+class NiccController @Inject() (
     cc: ControllerComponents,
-    nIContributionAndCreditService: NIContributionAndCreditService
+    niccService: NiccService
 ) extends BackendController(cc)
     with Logging {
 
-  def contributionsAndCredits(nationalInsuranceNumber: String, startTaxYear: Int, endTaxYear: Int): Action[AnyContent] =
+  def getNiccDetails: Action[AnyContent] =
     Action.async { implicit request =>
-      nIContributionAndCreditService.statusMapping(
-        nationalInsuranceNumber,
-        startTaxYear,
-        endTaxYear,
-        getDateOfBirthFromRequestBody(request).get
+      niccService.mapIdentifierToResponse(
+        getNationalInsuranceNumberFromRequestBody(request).get
       )
     }
 
-  def getDateOfBirthFromRequestBody(request: Request[AnyContent]): Option[NICCRequestPayload] =
+  private def getNationalInsuranceNumberFromRequestBody(request: Request[AnyContent]): Option[NiccRequest] =
     request.body.asJson match {
+
       case Some(json) =>
-        json.validate[NICCRequestPayload] match {
-          case JsSuccess(data, _) => Some(data)
-          case JsError(_)         => None
+        json.validate[NiccRequest] match {
+          case JsSuccess(data, _) =>
+            logger.info(
+              s"NiccRequest parsed successfully: " +
+                s"NINO=${data.nationalInsuranceNumber}, " +
+                s"DOB=${data.dateOfBirth}, " +
+                s"TaxYear=${data.startTaxYear}-${data.endTaxYear}"
+            )
+            Some(data)
+          case JsError(_) => None
         }
       case _ => None
     }

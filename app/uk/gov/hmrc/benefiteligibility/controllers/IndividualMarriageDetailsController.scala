@@ -17,13 +17,11 @@
 package uk.gov.hmrc.benefiteligibility.controllers
 
 import play.api.Logging
-import play.api.libs.json.{JsError, JsSuccess}
-import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
+import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.benefiteligibility.services.IndividualMarriageDetailsService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.Future
 
 @Singleton()
 class IndividualMarriageDetailsController @Inject() (

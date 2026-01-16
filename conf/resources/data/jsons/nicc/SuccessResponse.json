@@ -1,0 +1,28 @@
+{
+  "niClass1": [
+    {
+      "taxYear": 2022,
+      "contributionCategoryLetter": "^A$",
+      "contributionCategory": "(NONE)",
+      "contributionCreditType": "C1",
+      "primaryContribution": 99999999999999.98,
+      "class1ContributionStatus": "COMPLIANCE & YIELD INCOMPLETE",
+      "primaryPaidEarnings": 99999999999999.98,
+      "creditSource": "NOT KNOWN",
+      "employerName": "^(A)+$",
+      "latePaymentPeriod": "L"
+    }
+  ],
+  "niClass2": [
+    {
+      "taxYear": 2022,
+      "noOfCreditsAndConts": 53,
+      "contributionCreditType": "C1",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2NIContributonAmount": 99999999999999.98,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "NOT KNOWN",
+      "latePaymentPeriod": "L"
+    }
+  ]
+}
