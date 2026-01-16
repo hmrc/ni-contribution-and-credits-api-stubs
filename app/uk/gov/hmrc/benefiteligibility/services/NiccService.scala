@@ -18,17 +18,17 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.models.NICCRequest
+import uk.gov.hmrc.benefiteligibility.models.NiccRequest
 import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002A}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
 import scala.concurrent.Future
 
-class NICCService @Inject() (jsonUtils: JsonUtils) {
+class NiccService @Inject() (jsonUtils: JsonUtils) {
 
   def mapIdentifierToResponse(
-      niccRequest: NICCRequest
+      niccRequest: NiccRequest
   ): Future[Result] =
 
     StubId.withName(niccRequest.nationalInsuranceNumber) match {

@@ -36,13 +36,13 @@ import play.api.libs.json.{Json, OFormat}
 
 import java.time.LocalDate
 
-case class NICCRequest(
+case class NiccRequest(
     nationalInsuranceNumber: String,
     dateOfBirth: LocalDate,
     startTaxYear: Int,
     endTaxYear: Int
 )
 
-object NICCRequest {
-  implicit val requestJsonFormat: OFormat[NICCRequest] = Json.format[NICCRequest]
+object NiccRequest {
+  implicit val requestJsonFormat: OFormat[NiccRequest] = Json.format[NiccRequest]
 }

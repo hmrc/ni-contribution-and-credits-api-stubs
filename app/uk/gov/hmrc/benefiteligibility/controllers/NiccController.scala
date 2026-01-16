@@ -19,34 +19,34 @@ package uk.gov.hmrc.benefiteligibility.controllers
 import play.api.Logging
 import play.api.libs.json.{JsError, JsSuccess}
 import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
-import uk.gov.hmrc.benefiteligibility.models.NICCRequest
-import uk.gov.hmrc.benefiteligibility.services.NICCService
+import uk.gov.hmrc.benefiteligibility.models.NiccRequest
+import uk.gov.hmrc.benefiteligibility.services.NiccService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
 import javax.inject.{Inject, Singleton}
 
 @Singleton()
-class NICCController @Inject() (
+class NiccController @Inject() (
     cc: ControllerComponents,
-    niccService: NICCService
+    niccService: NiccService
 ) extends BackendController(cc)
     with Logging {
 
-  def getNICCDetails: Action[AnyContent] =
+  def getNiccDetails: Action[AnyContent] =
     Action.async { implicit request =>
       niccService.mapIdentifierToResponse(
         getNationalInsuranceNumberFromRequestBody(request).get
       )
     }
 
-  private def getNationalInsuranceNumberFromRequestBody(request: Request[AnyContent]): Option[NICCRequest] =
+  private def getNationalInsuranceNumberFromRequestBody(request: Request[AnyContent]): Option[NiccRequest] =
     request.body.asJson match {
 
       case Some(json) =>
-        json.validate[NICCRequest] match {
+        json.validate[NiccRequest] match {
           case JsSuccess(data, _) =>
             logger.info(
-              s"NICCRequest parsed successfully: " +
+              s"NiccRequest parsed successfully: " +
                 s"NINO=${data.nationalInsuranceNumber}, " +
                 s"DOB=${data.dateOfBirth}, " +
                 s"TaxYear=${data.startTaxYear}-${data.endTaxYear}"

@@ -19,7 +19,7 @@ package uk.gov.hmrc.nicontributionandcreditsapistubs.controllers
 import play.api.Logging
 import play.api.libs.json.{JsError, JsSuccess}
 import play.api.mvc.{Action, AnyContent, ControllerComponents, Request}
-import uk.gov.hmrc.nicontributionandcreditsapistubs.models._
+import uk.gov.hmrc.nicontributionandcreditsapistubs.models.*
 import uk.gov.hmrc.nicontributionandcreditsapistubs.services.NIContributionAndCreditService
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
