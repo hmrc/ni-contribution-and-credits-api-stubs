@@ -1,0 +1,31 @@
+{
+  "liabilityDetailsList": [
+    {
+      "identifier": "RN000001A",
+      "type": "ABROAD",
+      "occurrenceNumber": 1,
+      "startDateStatus": "PSEUDO START DATE",
+      "endDateStatus": "END DATE HELD",
+      "startDate": "2022-06-27",
+      "endDate": "2022-06-27",
+      "country": "ABROAD - NOT KNOWN",
+      "trainingCreditApprovalStatus": "CREDIT FOR APPROVED TRAINING APPLIES",
+      "casepaperReferenceNumber": "SCH/123/4",
+      "homeResponsibilitiesProtectionBenefitReference": "12345678AB",
+      "homeResponsibilitiesProtectionRate": 10.56,
+      "lostCardNotificationReason": "LOST IN DEPARTMENT'S CUSTODY",
+      "lostCardRulingReason": "ACCEPTED",
+      "homeResponsibilityProtectionCalculationYear": 2022,
+      "awardAmount": 10.56,
+      "resourceGroupIdentifier": 789,
+      "officeDetails": {
+        "officeLocationDecode": 1,
+        "officeLocationValue": "HQ STATIONARY STORE",
+        "officeIdentifier": "(NONE)"
+      }
+    }
+  ],
+  "callback": {
+    "callbackURL": "/person/RN000001/liability-summary/ABROAD?occurrenceNumber=1&type=ABROAD"
+  }
+}
