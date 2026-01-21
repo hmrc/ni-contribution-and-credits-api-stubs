@@ -1,0 +1,47 @@
+{
+  "statePensionAgeBefore2010TaxYear": false,
+  "statePensionAgeAfter2016TaxYear": true,
+  "benefitCalculationDetailsList": [
+    {
+      "additionalPensionAmountPre1997": 50,
+      "additionalPensionAmountPost1997": 75,
+      "basicPensionIncrementsCashValue": 5,
+      "graduatedRetirementBenefitCashValue": 2.5,
+      "totalGuaranteedMinimumPension": 10,
+      "totalNonGuaranteedMinimumPension": 0,
+      "greatBritainPaymentAmount": 120,
+      "dateOfBirth": "1955-07-15",
+      "benefitCalculationDetail": {
+        "nationalInsuranceNumber": "AA000002A",
+        "benefitType": "RETIREMENT PENSION",
+        "associatedCalculationSequenceNumber": 1,
+        "calculationStatus": "DEFINITIVE",
+        "calculationDate": "2025-11-01",
+        "additionalPensionPercentage": 12.5,
+        "basicPensionPercentage": 86,
+        "survivorsBenefitAgeRelatedPensionPercentage": 0,
+        "additionalAgeRelatedPensionPercentage": 4.75,
+        "payday": "FRIDAY",
+        "newStatePensionCalculationDetails": {
+          "netAdditionalPensionPre1997": 5,
+          "oldRulesStatePensionEntitlement": 130,
+          "netRulesAmount": 160,
+          "derivedRebateAmount": 2,
+          "initialStatePensionAmount": 170,
+          "protectedPayment2016": 0,
+          "minimumQualifyingPeriodMet": true,
+          "qualifyingYearsAfter2016": 6,
+          "newStatePensionQualifyingYears": 28,
+          "newStatePensionRequisiteYears": 35,
+          "newStatePensionEntitlement": 185.15,
+          "protectedPayment": 0,
+          "pensionSharingOrderContractedOutEmploymentsGroup": false,
+          "pensionSharingOrderStateEarningsRelatedPensionScheme": false,
+          "considerReducedRateElection": false,
+          "weeklyBudgetingLoanAmount": 10.56,
+          "calculationDate": "2025-11-01"
+        }
+      }
+    }
+  ]
+}
