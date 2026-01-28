@@ -1,0 +1,34 @@
+{
+  "schemeMembershipDetailsSummaryList": [
+    {
+      "stakeholderPensionSchemeType": "Non-Stakeholder Pension",
+      "schemeMembershipDetails": {
+        "nationalInsuranceNumber": "AA000002A",
+        "schemeMembershipSequenceNumber": 1,
+        "schemeMembershipOccurrenceNumber": 4,
+        "schemeMembershipTransferSequenceNumber": 10
+      }
+    },
+    {
+      "stakeholderPensionSchemeType": "Non-Stakeholder Pension",
+      "schemeMembershipDetails": {
+        "nationalInsuranceNumber": "AA000002A",
+        "schemeMembershipSequenceNumber": 1,
+        "schemeMembershipOccurrenceNumber": 4,
+        "schemeMembershipTransferSequenceNumber": 9
+      }
+    },
+    {
+      "stakeholderPensionSchemeType": "Non-Stakeholder Pension",
+      "schemeMembershipDetails": {
+        "nationalInsuranceNumber": "AA000002A",
+        "schemeMembershipSequenceNumber": 1,
+        "schemeMembershipOccurrenceNumber": 4,
+        "schemeMembershipTransferSequenceNumber": 8
+      }
+    }
+  ],
+  "callback": {
+    "callbackURL": "/benefit-scheme/AA000002A/scheme-membership-details?seqNo=1&occurrenceNo=4&transferSeqNo=8"
+  }
+}
