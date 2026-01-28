@@ -24,7 +24,7 @@ import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import javax.inject.{Inject, Singleton}
 
 @Singleton()
-class LongTermBenefitNotesController @Inject()(
+class LongTermBenefitNotesController @Inject() (
     cc: ControllerComponents,
     longTermBenefitNotesService: LongTermBenefitNotesService
 ) extends BackendController(cc)
@@ -32,8 +32,8 @@ class LongTermBenefitNotesController @Inject()(
 
   def getLongTermBenefitNotes(
       identifier: String,
-      seqNo: Option[Int],
-      benefitType: Option[String]
+      seqNo: Int,
+      benefitType: String
   ): Action[AnyContent] =
     Action.async {
       longTermBenefitNotesService.mapIdentifierToResponse(identifier)
