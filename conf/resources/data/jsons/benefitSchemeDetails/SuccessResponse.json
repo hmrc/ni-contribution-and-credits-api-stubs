@@ -1,0 +1,50 @@
+{
+  "benefitSchemeDetails": {
+    "magneticTapeNumber": 54321,
+    "schemeName": "EXAMPLE PENSION SCHEME",
+    "schemeStartDate": "1985-04-06",
+    "schemeCessationDate": "2024-12-31",
+    "contractedOutDeductionExtinguishedDate": "2024-12-31",
+    "paymentSuspensionDate": "2024-10-01",
+    "recoveriesSuspendedDate": "2024-10-01",
+    "paymentRestartDate": "2024-10-01",
+    "recoveriesRestartedDate": "2024-10-01",
+    "schemeNature": "UNIT TRUSTS",
+    "benefitSchemeInstitution": "UNIT TRUST",
+    "accruedGMPLiabilityServiceDate": "1990-04-06",
+    "rerouteToSchemeCessation": "RE-ROUTE TO CESSATION",
+    "statementInhibitor": "SET",
+    "certificateCancellationDate": "2024-12-31",
+    "suspendedDate": "2024-10-01",
+    "isleOfManInterest": false,
+    "schemeWindingUp": true,
+    "revaluationRateSequenceNumber": 12,
+    "benefitSchemeStatus": "BLOCK ON PROVIDER",
+    "dateFormallyCertified": "1985-04-06",
+    "privatePensionSchemeSanctionDate": "1985-04-06",
+    "currentOptimisticLock": 4,
+    "schemeConversionDate": "2024-12-31",
+    "schemeInhibitionStatus": "Converted Stakeholder Pension",
+    "reconciliationDate": "2025-03-31",
+    "schemeContractedOutNumberDetails": "S2345678C"
+  },
+  "schemeAddressDetailsList": [
+    {
+      "schemeAddressType": "GENERAL CORRESPONDENCE",
+      "schemeAddressSequenceNumber": 5,
+      "schemeAddressStartDate": "2010-01-01",
+      "schemeAddressEndDate": "2024-12-31",
+      "country": "SCOTLAND",
+      "areaDiallingCode": "0131 (99)",
+      "schemeTelephoneNumber": "0131 000 0000",
+      "schemeContractedOutNumberDetails": "S2345678C",
+      "benefitSchemeAddressDetails": {
+        "schemeAddressLine1": "1 Sample Road",
+        "schemeAddressLine2": "Unit 2",
+        "schemeAddressLocality": "Old Quarter",
+        "schemeAddressPostalTown": "Exampleburgh",
+        "schemePostcode": "EX2 2EX"
+      }
+    }
+  ]
+}
