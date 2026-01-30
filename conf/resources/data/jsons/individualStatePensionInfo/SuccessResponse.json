@@ -1,0 +1,463 @@
+{
+  "identifier": "AA000001A",
+  "numberOfQualifyingYears": 50,
+  "nonQualifyingYears": 0,
+  "yearsToFinalRelevantYear": 0,
+  "nonQualifyingYearsPayable": 0,
+  "pre1975CCCount": 0,
+  "dateOfEntry": "1975-07-18",
+  "contributionsByTaxYear": [
+    {
+      "taxYear": 1975,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 19.26,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 350.91,
+      "otherCredits": [
+        {
+          "contributionCreditType": "CLASS 3 CREDIT",
+          "creditSourceType": "NOT KNOWN",
+          "contributionCreditCount": 50
+        }
+      ]
+    },
+    {
+      "taxYear": 1976,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 79.16,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 1377.39,
+      "otherCredits": [
+        {
+          "contributionCreditType": "CLASS 3 CREDIT",
+          "creditSourceType": "NOT KNOWN",
+          "contributionCreditCount": 50
+        }
+      ]
+    },
+    {
+      "taxYear": 1977,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 153.21,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 2666.09
+    },
+    {
+      "taxYear": 1978,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 299.4,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 4606.15
+    },
+    {
+      "taxYear": 1979,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 249.92,
+      "coClassOnePaid": 186.46,
+      "coPrimaryPaidEarnings": 4665,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 5641.93
+    },
+    {
+      "taxYear": 1980,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 246.18,
+      "coClassOnePaid": 165.42,
+      "coPrimaryPaidEarnings": 3894.12,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 5091.15
+    },
+    {
+      "taxYear": 1981,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 85.57,
+      "coClassOnePaid": 56.27,
+      "coPrimaryPaidEarnings": 1072.38,
+      "niEarningsSelfEmployed": 40,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 1450.44
+    },
+    {
+      "taxYear": 1982,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 536.4,
+      "coClassOnePaid": 415.14,
+      "coPrimaryPaidEarnings": 6643.2,
+      "niEarningsSelfEmployed": 4,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 8029.49
+    },
+    {
+      "taxYear": 1983,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 685.3,
+      "coClassOnePaid": 539.66,
+      "coPrimaryPaidEarnings": 7880.29,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 9499.18
+    },
+    {
+      "taxYear": 1984,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 836.68,
+      "coClassOnePaid": 677.56,
+      "coPrimaryPaidEarnings": 9891.97,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 11660.86
+    },
+    {
+      "taxYear": 1985,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 701.43,
+      "coClassOnePaid": 535.35,
+      "coPrimaryPaidEarnings": 7815.33,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 9979.85
+    },
+    {
+      "taxYear": 1986,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 872.97,
+      "coClassOnePaid": 335.92,
+      "coPrimaryPaidEarnings": 4903.94,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 12426.81
+    },
+    {
+      "taxYear": 1987,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1301.4,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 14459
+    },
+    {
+      "taxYear": 1988,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1213.15,
+      "coClassOnePaid": 377.94,
+      "coPrimaryPaidEarnings": 5399,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 14678
+    },
+    {
+      "taxYear": 1989,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1106.22,
+      "coClassOnePaid": 981.09,
+      "coPrimaryPaidEarnings": 14015,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 16208
+    },
+    {
+      "taxYear": 1990,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1128.91,
+      "coClassOnePaid": 994.87,
+      "coPrimaryPaidEarnings": 14212,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 17603
+    },
+    {
+      "taxYear": 1991,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1460.16,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 18304
+    },
+    {
+      "taxYear": 1992,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1452.88,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 18304
+    },
+    {
+      "taxYear": 1993,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1445.6,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 18304
+    },
+    {
+      "taxYear": 1994,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1595.88,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 18304
+    },
+    {
+      "taxYear": 1995,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1800.83,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 20441
+    },
+    {
+      "taxYear": 1996,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1821.99,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 20757
+    },
+    {
+      "taxYear": 1997,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2160.08,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 24180
+    },
+    {
+      "taxYear": 1998,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2255.76,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 25220
+    },
+    {
+      "taxYear": 1999,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2256.8,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 26000
+    },
+    {
+      "taxYear": 2000,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1798,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 21000
+    },
+    {
+      "taxYear": 2001,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1097.35,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 15385
+    },
+    {
+      "taxYear": 2002,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1237.05,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 16973
+    },
+    {
+      "taxYear": 2003,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1226.6,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 14700
+    },
+    {
+      "taxYear": 2004,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1504.36,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 18392
+    },
+    {
+      "taxYear": 2005,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 937.55,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 12758,
+      "otherCredits": [
+        {
+          "contributionCreditType": "CLASS 1 CREDIT",
+          "creditSourceType": "JSA TAPE INPUT",
+          "contributionCreditCount": 3
+        }
+      ]
+    },
+    {
+      "taxYear": 2006,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 655.26,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 9619,
+      "otherCredits": [
+        {
+          "contributionCreditType": "CLASS 1 CREDIT",
+          "creditSourceType": "JSA TAPE INPUT",
+          "contributionCreditCount": 11
+        }
+      ]
+    },
+    {
+      "taxYear": 2007,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 830.72,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 12315
+    },
+    {
+      "taxYear": 2008,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1229.8,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 16592
+    },
+    {
+      "taxYear": 2009,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1078.88,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 15496
+    },
+    {
+      "taxYear": 2010,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1478.4,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 19128
+    },
+    {
+      "taxYear": 2011,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 369.98,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 6754
+    },
+    {
+      "taxYear": 2012,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1488.88,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 19994
+    },
+    {
+      "taxYear": 2013,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1927.74,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 23825.57
+    },
+    {
+      "taxYear": 2014,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2056.97,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 25097.58
+    },
+    {
+      "taxYear": 2015,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 3581.9,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 37668.89
+    },
+    {
+      "taxYear": 2016,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 3366.29,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 36065.92
+    },
+    {
+      "taxYear": 2017,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 4082.54,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 41810.62
+    },
+    {
+      "taxYear": 2018,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2568.29,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 29826.46
+    },
+    {
+      "taxYear": 2019,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1322.33,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 19442.84
+    },
+    {
+      "taxYear": 2020,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2631.95,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 31592
+    },
+    {
+      "taxYear": 2021,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2710.82,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 32042
+    },
+    {
+      "taxYear": 2022,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2812.48,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 34249
+    },
+    {
+      "taxYear": 2023,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 2688.36,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 35787
+    },
+    {
+      "taxYear": 2024,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 1947.32,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 36888
+    }
+  ]
+}
