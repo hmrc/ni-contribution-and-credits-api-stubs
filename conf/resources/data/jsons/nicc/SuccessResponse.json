@@ -1,27 +1,30 @@
 {
-  "niClass1": [
+  "totalGraduatedPensionUnits": 9.5,
+  "class1ContributionAndCredits": [
     {
-      "taxYear": 2022,
-      "contributionCategoryLetter": "^A$",
-      "contributionCategory": "(NONE)",
+      "taxYear": 2024,
+      "numberOfContributionsAndCredits": 51,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
       "contributionCreditType": "C1",
-      "primaryContribution": 99999999999999.98,
-      "class1ContributionStatus": "COMPLIANCE & YIELD INCOMPLETE",
-      "primaryPaidEarnings": 99999999999999.98,
-      "creditSource": "NOT KNOWN",
-      "employerName": "^(A)+$",
+      "primaryContribution": 2850,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 32000,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "AcmeCo",
       "latePaymentPeriod": "L"
-    }
-  ],
-  "niClass2": [
+    },
     {
-      "taxYear": 2022,
-      "noOfCreditsAndConts": 53,
+      "taxYear": 2023,
+      "numberOfContributionsAndCredits": 51,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
       "contributionCreditType": "C1",
-      "class2Or3EarningsFactor": 99999999999999.98,
-      "class2NIContributonAmount": 99999999999999.98,
-      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
-      "creditSource": "NOT KNOWN",
+      "primaryContribution": 2700,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 30000,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Widget",
       "latePaymentPeriod": "L"
     }
   ]
