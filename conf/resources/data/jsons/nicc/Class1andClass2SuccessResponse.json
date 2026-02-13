@@ -1,0 +1,30 @@
+{
+  "totalGraduatedPensionUnits": 7,
+  "class1ContributionAndCredits": [
+    {
+      "taxYear": 2022,
+      "numberOfContributionsAndCredits": 26,
+      "contributionCategoryLetter": "B",
+      "contributionCategory": "REDUCED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 1200,
+      "class1ContributionStatus": "CURRENT",
+      "primaryPaidEarnings": 18000,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Fabrik",
+      "latePaymentPeriod": "ZZ"
+    }
+  ],
+  "class2ContributionAndCredits": [
+    {
+      "taxYear": 2022,
+      "numberOfContributionsAndCredits": 26,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 3250,
+      "class2NIContributionAmount": 81.9,
+      "class2Or3CreditStatus": "POTENTIAL",
+      "creditSource": "DIRECT DEBIT",
+      "latePaymentPeriod": "L"
+    }
+  ]
+}
