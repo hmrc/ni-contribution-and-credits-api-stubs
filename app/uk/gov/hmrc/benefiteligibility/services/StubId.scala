@@ -19,10 +19,18 @@ package uk.gov.hmrc.benefiteligibility.services
 import enumeratum.{Enum, EnumEntry}
 import scala.collection.immutable
 
+/** Represents all stub identifiers for benefit eligibility.
+  *
+  * @note
+  *   This enum uses [[enumeratum.Enum]] and [[enumeratum.EnumEntry]].
+  */
 sealed trait StubId extends EnumEntry
 
 object StubId extends Enum[StubId] {
+
+  /** The sequence of all StubId values */
   val values: immutable.IndexedSeq[StubId] = findValues
+
   case object AA000001A extends StubId
   case object AA000002A extends StubId
   case object AA000002  extends StubId

@@ -33,11 +33,27 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
     StubId.withName(identifier) match {
       case AA000001A =>
         Future.successful(
-          BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/liabilitySummary/ErrorResponse400.2.json"))
+          BadRequest(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/ErrorResponse400.2.json"
+            )
+          )
         )
       case AA000002A =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/liabilitySummary/SuccessResponse.json"))
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/SuccessResponse.json"
+            )
+          )
+        )
+      case _ =>
+        Future.successful(
+          BadRequest(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/ErrorResponseDefault.json"
+            )
+          )
         )
     }
 

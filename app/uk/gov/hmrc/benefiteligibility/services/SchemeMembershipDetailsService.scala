@@ -34,12 +34,26 @@ class SchemeMembershipDetailsService @Inject() (jsonUtils: JsonUtils) {
       case AA000001A =>
         Future.successful(
           BadRequest(
-            jsonUtils.readJsonFile(s"conf/resources/data/jsons/schemeMembershipDetails/ErrorResponse400.2.json")
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/schemeMembershipDetails/ErrorResponse400.2.json"
+            )
           )
         )
       case AA000002A =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/schemeMembershipDetails/SuccessResponse.json"))
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/schemeMembershipDetails/SuccessResponse.json"
+            )
+          )
+        )
+      case _ =>
+        Future.successful(
+          BadRequest(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/schemeMembershipDetails/ErrorResponseDefault.json"
+            )
+          )
         )
     }
 

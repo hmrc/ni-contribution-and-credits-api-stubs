@@ -17,9 +17,17 @@
 package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
-import play.api.mvc.Results.{Ok, BadRequest, Status}
+import play.api.mvc.Results.{BadRequest, Ok, Status}
 import uk.gov.hmrc.benefiteligibility.models.NiccRequest
-import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000004, AA000005, AA000006}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{
+  AA000001A,
+  AA000002,
+  AA000002A,
+  AA000003,
+  AA000004,
+  AA000005,
+  AA000006
+}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -34,8 +42,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
     StubId.withName(niccRequest.nationalInsuranceNumber) match {
       case AA000006 =>
         Future.successful(
-          Status(403)(
-            jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse403.json"))
+          Status(403)(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse403.json"))
         )
       case AA000002A | AA000002 =>
         Future.successful(
