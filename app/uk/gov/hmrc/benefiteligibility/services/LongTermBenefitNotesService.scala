@@ -50,12 +50,26 @@ class LongTermBenefitNotesService @Inject() (jsonUtils: JsonUtils) {
       case AA000001A =>
         Future.successful(
           BadRequest(
-            jsonUtils.readJsonFile(s"conf/resources/data/jsons/longTermBenefitNotes/ErrorResponse400.2.json")
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/benefitSchemeDetails/ErrorResponse400.2.json"
+            )
           )
         )
       case AA000002A =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/longTermBenefitNotes/SuccessResponse.json"))
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/longTermBenefitNotes/SuccessResponse.json"
+            )
+          )
+        )
+      case _ =>
+        Future.successful(
+          BadRequest(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/longTermBenefitNotes/ErrorResponseDefault.json"
+            )
+          )
         )
     }
 

@@ -1,0 +1,15 @@
+{
+  "totalGraduatedPensionUnits": 7,
+  "class2ContributionAndCredits": [
+    {
+      "taxYear": 2022,
+      "numberOfContributionsAndCredits": 26,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 3250,
+      "class2NIContributionAmount": 81.9,
+      "class2Or3CreditStatus": "POTENTIAL",
+      "creditSource": "DIRECT DEBIT",
+      "latePaymentPeriod": "L"
+    }
+  ]
+}

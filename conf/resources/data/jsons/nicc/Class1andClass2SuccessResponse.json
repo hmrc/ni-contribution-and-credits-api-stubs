@@ -1,29 +1,65 @@
 {
-  "totalGraduatedPensionUnits": 7,
+  "totalGraduatedPensionUnits": 1.2,
   "class1ContributionAndCredits": [
     {
-      "taxYear": 2022,
-      "numberOfContributionsAndCredits": 26,
-      "contributionCategoryLetter": "B",
-      "contributionCategory": "REDUCED RATE",
-      "contributionCreditType": "C1",
+      "taxYear": 2019,
+      "numberOfContributionsAndCredits": 15,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "contributionCreditType": "2B",
       "primaryContribution": 1200,
-      "class1ContributionStatus": "CURRENT",
-      "primaryPaidEarnings": 18000,
-      "creditSource": "EMPLOYMENT SERVICES",
-      "employerName": "Fabrik",
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 10000,
+      "creditSource": "JSA TAPE INPUT",
+      "employerName": "Temp",
+      "latePaymentPeriod": "L"
+    },
+    {
+      "taxYear": 2021,
+      "numberOfContributionsAndCredits": 20,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "contributionCreditType": "2B",
+      "primaryContribution": 1440,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 12000,
+      "creditSource": "JSA TAPE INPUT",
+      "employerName": "Temp",
+      "latePaymentPeriod": "L"
+    },
+    {
+      "taxYear": 2020,
+      "numberOfContributionsAndCredits": 30,
+      "contributionCategoryLetter": "A",
+      "contributionCategory": "STANDARD RATE",
+      "contributionCreditType": "CR1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "JSA TAPE INPUT",
+      "employerName": "",
       "latePaymentPeriod": "ZZ"
     }
   ],
   "class2ContributionAndCredits": [
     {
       "taxYear": 2022,
-      "numberOfContributionsAndCredits": 26,
-      "contributionCreditType": "C2",
-      "class2Or3EarningsFactor": 3250,
-      "class2NIContributionAmount": 81.9,
-      "class2Or3CreditStatus": "POTENTIAL",
-      "creditSource": "DIRECT DEBIT",
+      "numberOfContributionsAndCredits": 30,
+      "contributionCreditType": "2B",
+      "class2Or3EarningsFactor": 1.1,
+      "class2NIContributonAmount": 44,
+      "class2Or3CreditStatus": "VALID",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZZ"
+    },
+    {
+      "taxYear": 2023,
+      "numberOfContributionsAndCredits": 25,
+      "contributionCreditType": "2B",
+      "class2Or3EarningsFactor": 0.9,
+      "class2NIContributonAmount": 36,
+      "class2Or3CreditStatus": "VALID",
+      "creditSource": "JSA PAPER INPUT",
       "latePaymentPeriod": "L"
     }
   ]
