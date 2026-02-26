@@ -1,0 +1,32 @@
+{
+  "benefitSchemeDetails": {
+    "magneticTapeNumber": 54321,
+    "schemeName": "EXAMPLE PENSION SCHEME",
+    "schemeStartDate": "1985-04-06",
+    "schemeCessationDate": "2024-12-31",
+    "contractedOutDeductionExtinguishedDate": "2024-12-31",
+    "paymentSuspensionDate": "2024-10-01",
+    "recoveriesSuspendedDate": "2024-10-01",
+    "paymentRestartDate": "2024-10-01",
+    "recoveriesRestartedDate": "2024-10-01",
+    "schemeNature": "UNIT TRUSTS",
+    "benefitSchemeInstitution": "UNIT TRUST",
+    "accruedGMPLiabilityServiceDate": "1990-04-06",
+    "rerouteToSchemeCessation": "RE-ROUTE TO CESSATION",
+    "statementInhibitor": "SET",
+    "certificateCancellationDate": "2024-12-31",
+    "suspendedDate": "2024-10-01",
+    "isleOfManInterest": false,
+    "schemeWindingUp": true,
+    "revaluationRateSequenceNumber": 12,
+    "benefitSchemeStatus": "BLOCK ON PROVIDER",
+    "dateFormallyCertified": "1985-04-06",
+    "privatePensionSchemeSanctionDate": "1985-04-06",
+    "currentOptimisticLock": 4,
+    "schemeConversionDate": "2024-12-31",
+    "schemeInhibitionStatus": "Converted Stakeholder Pension",
+    "reconciliationDate": "2025-03-31",
+    "schemeContractedOutNumberDetails": "S2345678C"
+  },
+  "schemeAddressDetailsList": []
+}

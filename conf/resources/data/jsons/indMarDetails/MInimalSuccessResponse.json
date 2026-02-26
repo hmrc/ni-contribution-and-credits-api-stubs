@@ -1,0 +1,12 @@
+{
+  "marriageDetails": {
+    "activeMarriage": true,
+    "marriageDetailsList": [],
+    "_links": {
+      "self": {
+        "href": "/individual/AA000002/marriage-cp",
+        "methods": "get"
+      }
+    }
+  }
+}
