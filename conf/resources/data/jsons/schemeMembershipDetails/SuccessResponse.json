@@ -27,8 +27,5 @@
         "schemeMembershipTransferSequenceNumber": 8
       }
     }
-  ],
-  "callback": {
-    "callbackURL": "/benefit-scheme/AA000002A/scheme-membership-details?seqNo=1&occurrenceNo=4&transferSeqNo=8"
-  }
+  ]
 }
