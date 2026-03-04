@@ -51,7 +51,7 @@ class Class2MaReceiptsService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/c2mar/ErrorResponseDefault.json"
+              s"conf/resources/data/jsons/DefaultNpsError400.json"
             )
           )
         )

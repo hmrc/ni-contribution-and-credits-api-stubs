@@ -17,7 +17,7 @@
 package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
-import play.api.mvc.Results.{BadRequest, Ok, Status}
+import play.api.mvc.Results.{BadRequest, Forbidden, Ok, Status}
 import uk.gov.hmrc.benefiteligibility.models.NiccRequest
 import uk.gov.hmrc.benefiteligibility.services.StubId.*
 import uk.gov.hmrc.utils.JsonUtils
@@ -34,19 +34,15 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
     StubId.withName(niccRequest.nationalInsuranceNumber) match {
       case AA000006 =>
         Future.successful(
-          Status(403)(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse403.json"))
+          Forbidden(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse403.json"))
         )
-      case AA000002A | AA000002 =>
+      case AA000002A | AA000002 | AA000004 =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class1andClass2SuccessResponse.json"))
         )
       case AA000003 =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class2SuccessResponse.json"))
-        )
-      case AA000004 =>
-        Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class1andClass2SuccessResponse.json"))
         )
       case AA000005 =>
         Future.successful(
@@ -56,6 +52,11 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse400.2.json"))
         )
+      case _ =>
+        Future.successful(
+          BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/DefaultNpsError400.json"))
+        )
+
     }
 
 }

@@ -18,7 +18,15 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000005, AA000006}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{
+  AA000001A,
+  AA000002,
+  AA000002A,
+  AA000003,
+  AA000004,
+  AA000005,
+  AA000006
+}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -39,7 +47,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000002 | AA000003 | AA000006 =>
+      case AA000002A | AA000002 | AA000003 | AA000006 | AA000004 =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -59,7 +67,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/indMarDetails/ErrorResponseDefault.json"
+              s"conf/resources/data/jsons/DefaultNpsError400.json"
             )
           )
         )
