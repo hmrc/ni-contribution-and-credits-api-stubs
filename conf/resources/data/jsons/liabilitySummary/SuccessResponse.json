@@ -18,14 +18,12 @@
       "homeResponsibilityProtectionCalculationYear": 2022,
       "awardAmount": 10.56,
       "resourceGroupIdentifier": 789,
+      "homeResponsibilitiesProtectionIndicator": "HRP already recorded",
       "officeDetails": {
         "officeLocationDecode": 1,
         "officeLocationValue": "HQ STATIONARY STORE",
         "officeIdentifier": "(NONE)"
       }
     }
-  ],
-  "callback": {
-    "callbackURL": "/person/RN000001/liability-summary/ABROAD?occurrenceNumber=1&type=ABROAD"
-  }
+  ]
 }
