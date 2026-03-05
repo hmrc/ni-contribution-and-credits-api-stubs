@@ -51,7 +51,7 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/ErrorResponseDefault.json"
+              s"conf/resources/data/jsons/DefaultNpsError400.json"
             )
           )
         )

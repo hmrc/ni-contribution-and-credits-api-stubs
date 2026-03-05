@@ -1,0 +1,15 @@
+{
+  "origin":"HIP",
+  "response":{
+    "failures":[
+      {
+        "reason":"reason_1",
+        "code":"400.1"
+      },
+      {
+        "reason":"reason_2",
+        "code":"400.2"
+      }
+    ]
+  }
+}

@@ -34,7 +34,15 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok, Status}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000005, AA000006}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{
+  AA000001A,
+  AA000002,
+  AA000002A,
+  AA000003,
+  AA000004,
+  AA000005,
+  AA000006
+}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -55,7 +63,7 @@ class LongTermBenefitNotesService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000002 | AA000003 =>
+      case AA000002A | AA000002 | AA000003 | AA000004 =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -83,7 +91,7 @@ class LongTermBenefitNotesService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/longTermBenefitNotes/ErrorResponseDefault.json"
+              s"conf/resources/data/jsons/DefaultNpsError400.json"
             )
           )
         )

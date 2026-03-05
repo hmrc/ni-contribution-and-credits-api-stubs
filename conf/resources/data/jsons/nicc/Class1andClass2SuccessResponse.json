@@ -26,19 +26,6 @@
       "creditSource": "JSA TAPE INPUT",
       "employerName": "Temp",
       "latePaymentPeriod": "L"
-    },
-    {
-      "taxYear": 2020,
-      "numberOfContributionsAndCredits": 30,
-      "contributionCategoryLetter": "A",
-      "contributionCategory": "STANDARD RATE",
-      "contributionCreditType": "CR1",
-      "primaryContribution": 0,
-      "class1ContributionStatus": "VALID",
-      "primaryPaidEarnings": 0,
-      "creditSource": "JSA TAPE INPUT",
-      "employerName": "",
-      "latePaymentPeriod": "ZZ"
     }
   ],
   "class2ContributionAndCredits": [

@@ -47,7 +47,7 @@ class SchemeMembershipDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000002 | AA000003 | AA000006 =>
+      case AA000002A | AA000002 | AA000003 | AA000006 | AA000004 =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -67,7 +67,7 @@ class SchemeMembershipDetailsService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/schemeMembershipDetails/ErrorResponseDefault.json"
+              s"conf/resources/data/jsons/DefaultNpsError400.json"
             )
           )
         )

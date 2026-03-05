@@ -1,8 +1,11 @@
 {
-  "failures": [
-    {
-      "reason": "HTTP message not readable",
-      "code": "400.2"
-    }
-  ]
+  "origin": "HIP",
+  "response": {
+    "failures": [
+      {
+        "reason": "Bad Request",
+        "code": "400.1"
+      }
+    ]
+  }
 }

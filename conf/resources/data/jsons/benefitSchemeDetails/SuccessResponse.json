@@ -26,7 +26,7 @@
     "schemeConversionDate": "2024-12-31",
     "schemeInhibitionStatus": "Converted Stakeholder Pension",
     "reconciliationDate": "2025-03-31",
-    "schemeContractedOutNumberDetails": "S2345678C"
+    "schemeContractedOutNumberDetails": "S3123456B"
   },
   "schemeAddressDetailsList": [
     {
@@ -37,7 +37,7 @@
       "country": "SCOTLAND",
       "areaDiallingCode": "0131 (99)",
       "schemeTelephoneNumber": "0131 000 0000",
-      "schemeContractedOutNumberDetails": "S2345678C",
+      "schemeContractedOutNumberDetails": "S3123456B",
       "benefitSchemeAddressDetails": {
         "schemeAddressLine1": "1 Sample Road",
         "schemeAddressLine2": "Unit 2",
