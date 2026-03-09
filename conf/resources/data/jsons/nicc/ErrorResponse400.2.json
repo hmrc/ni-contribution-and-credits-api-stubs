@@ -1,8 +1,15 @@
 {
-  "failures": [
-    {
-      "reason": "HTTP message not readable",
-      "code": "400.2"
-    }
-  ]
+  "origin":"HIP",
+  "response":{
+    "failures":[
+      {
+        "reason":"HTTP message not readable",
+        "code":"400.1"
+      },
+      {
+        "reason":"Constraint violation: Invalid/Missing input parameter: <parameter>",
+        "code":"400.2"
+      }
+    ]
+  }
 }
