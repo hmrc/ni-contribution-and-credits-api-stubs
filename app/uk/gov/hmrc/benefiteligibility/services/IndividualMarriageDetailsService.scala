@@ -39,7 +39,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
   ): Future[Result] =
 
     StubId.withName(identifier) match {
-      case AA000001A =>
+      case AA000001A | AA000003 =>
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
@@ -47,7 +47,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000002 | AA000003 | AA000006 | AA000004 =>
+      case AA000002A | AA000002 | AA000006 | AA000004 =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
