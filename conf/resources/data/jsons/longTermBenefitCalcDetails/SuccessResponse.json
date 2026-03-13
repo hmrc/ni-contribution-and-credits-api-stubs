@@ -21,6 +21,10 @@
         "basicPensionPercentage": 86,
         "survivorsBenefitAgeRelatedPensionPercentage": 0,
         "additionalAgeRelatedPensionPercentage": 4.75,
+        "guaranteedMinimumPensionContractedOutDeductionsPre1988": 200,
+        "guaranteedMinimumPensionContractedOutDeductionsPost1988": 100,
+        "contractedOutDeductionsPre1988": 100.0,
+        "contractedOutDeductionsPost1988": 200.0,
         "payday": "FRIDAY",
         "newStatePensionCalculationDetails": {
           "netAdditionalPensionPre1997": 5,
