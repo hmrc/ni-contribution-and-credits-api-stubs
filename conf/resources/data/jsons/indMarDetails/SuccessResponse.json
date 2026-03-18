@@ -13,7 +13,9 @@
         "spouseForename": "John",
         "spouseSurname": "Smith",
         "separationDate": "2025-04-05",
-        "reconciliationDate": "2020-04-07"
+        "reconciliationDate": "2020-04-07",
+        "spouseForename": "Alex",
+        "spouseSurname": "Smith"
       }
     ],
     "_links": {
