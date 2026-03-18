@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.benefiteligibility.services
 
-import org.apache.pekko.actor.ActorSystem
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Forbidden, NotFound, Ok}
 import uk.gov.hmrc.benefiteligibility.models.NiccRequest
@@ -26,7 +25,7 @@ import uk.gov.hmrc.utils.JsonUtils
 import javax.inject.Inject
 import scala.concurrent.Future
 
-class NiccService @Inject() (jsonUtils: JsonUtils, actorSystem: ActorSystem) {
+class NiccService @Inject() (jsonUtils: JsonUtils) {
 
   def mapIdentifierToResponse(
       niccRequest: NiccRequest
@@ -49,7 +48,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils, actorSystem: ActorSystem) {
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/MinimalSuccessResponse.json"))
         )
-      case AA000001A | AA000005=>
+      case AA000001A | AA000005 =>
         Future.successful(
           BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse400.2.json"))
         )
