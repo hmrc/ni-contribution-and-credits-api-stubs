@@ -26,7 +26,8 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000004,
   AA000005,
   AA000006,
-  AA000007
+  AA000007,
+  AA000008
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -40,7 +41,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
   ): Future[Result] =
 
     StubId.withName(identifier) match {
-      case AA000001A | AA000003 =>
+      case AA000001A | AA000008 =>
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
@@ -48,7 +49,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000002 | AA000006 | AA000004 | AA000007 =>
+      case AA000002A | AA000002 | AA000006 | AA000004 | AA000003 | AA000007 =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(

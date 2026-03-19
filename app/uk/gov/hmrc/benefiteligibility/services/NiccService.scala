@@ -40,7 +40,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class1andClass2SuccessResponse.json"))
         )
-      case AA000003 =>
+      case AA000003 | AA000008 =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class2SuccessResponse.json"))
         )
