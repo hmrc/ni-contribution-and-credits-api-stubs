@@ -10,6 +10,8 @@
         "endDate": "2025-04-06",
         "endDateStatus": "VERIFIED",
         "spouseIdentifier": "AA000002",
+        "spouseForename": "John",
+        "spouseSurname": "Smith",
         "separationDate": "2025-04-05",
         "reconciliationDate": "2020-04-07",
         "spouseForename": "Alex",
