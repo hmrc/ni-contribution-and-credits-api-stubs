@@ -28,7 +28,7 @@
       "latePaymentPeriod": "L"
     }
   ],
-  "class2ContributionAndCredits": [
+  "class2Or3ContributionAndCredits": [
     {
       "taxYear": 2022,
       "numberOfContributionsAndCredits": 30,
