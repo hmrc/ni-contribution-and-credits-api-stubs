@@ -24,7 +24,6 @@
     "privatePensionSchemeSanctionDate": "1985-04-06",
     "currentOptimisticLock": 4,
     "schemeConversionDate": "2024-12-31",
-    "schemeInhibitionStatus": "Converted Stakeholder Pension",
     "reconciliationDate": "2025-03-31",
     "schemeContractedOutNumberDetails": "S3123456B"
   },
@@ -33,7 +32,6 @@
       "schemeAddressType": "GENERAL CORRESPONDENCE",
       "schemeAddressSequenceNumber": 5,
       "schemeAddressStartDate": "2010-01-01",
-      "schemeAddressEndDate": "2024-12-31",
       "country": "SCOTLAND",
       "areaDiallingCode": "0131 (99)",
       "schemeTelephoneNumber": "0131 000 0000",
