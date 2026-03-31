@@ -18,7 +18,14 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000007}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{
+  AA000001A,
+  AA000002,
+  AA000002A,
+  AA000003,
+  AA000007,
+  PaginationCompleteForLiabilityDetails
+}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -52,6 +59,14 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
           BadRequest(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/liabilitySummary/ErrorResponse400.2.json"
+            )
+          )
+        )
+      case PaginationCompleteForLiabilityDetails =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/SuccessLiabilityPaginationResponse.json"
             )
           )
         )

@@ -25,8 +25,5 @@
         "officeIdentifier": "(NONE)"
       }
     }
-  ],
-  "callback": {
-    "callbackURL": "/person/PaginationCompleteForLiabilityDetails/liability-summary/ABROAD?occurrenceNumber=1&type=ABROAD"
-  }
+  ]
 }

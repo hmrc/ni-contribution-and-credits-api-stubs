@@ -27,7 +27,8 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000005,
   AA000006,
   AA000007,
-  AA000008
+  AA000008,
+  PaginationCompleteForMarriageDetails
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -54,6 +55,14 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
           Ok(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/indMarDetails/SuccessResponse.json"
+            )
+          )
+        )
+      case PaginationCompleteForMarriageDetails =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/indMarDetails/SuccessPaginationResponse.json"
             )
           )
         )

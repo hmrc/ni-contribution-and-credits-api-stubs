@@ -17,12 +17,6 @@
         "spouseForename": "Alex",
         "spouseSurname": "Smith"
       }
-    ],
-    "_links": {
-      "self": {
-        "href": "/individual/PaginationCompleteForMarriageDetails/marriage-cp",
-        "methods": "get"
-      }
-    }
+    ]
   }
 }
