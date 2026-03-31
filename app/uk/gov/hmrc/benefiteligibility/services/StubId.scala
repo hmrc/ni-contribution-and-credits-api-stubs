@@ -31,17 +31,17 @@ object StubId extends Enum[StubId] {
   /** The sequence of all StubId values */
   val values: immutable.IndexedSeq[StubId] = findValues
 
-  case object AA000001A extends StubId
-  case object AA000002A extends StubId
-  case object AA000002  extends StubId
-  case object AA000003  extends StubId
-  case object AA000004  extends StubId
-  case object AA000005  extends StubId
-  case object AA000006  extends StubId
-  case object AA000007  extends StubId
-  case object AA000008  extends StubId
-  case object AB123456C extends StubId
-  case object PaginationCompleteForMarriageDetails extends StubId
+  case object AA000001A                             extends StubId
+  case object AA000002A                             extends StubId
+  case object AA000002                              extends StubId
+  case object AA000003                              extends StubId
+  case object AA000004                              extends StubId
+  case object AA000005                              extends StubId
+  case object AA000006                              extends StubId
+  case object AA000007                              extends StubId
+  case object AA000008                              extends StubId
+  case object AB123456C                             extends StubId
+  case object PaginationCompleteForMarriageDetails  extends StubId
   case object PaginationCompleteForLiabilityDetails extends StubId
 
 }
