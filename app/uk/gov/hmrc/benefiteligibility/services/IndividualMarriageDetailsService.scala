@@ -18,17 +18,7 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{
-  AA000001A,
-  AA000002,
-  AA000002A,
-  AA000003,
-  AA000004,
-  AA000005,
-  AA000006,
-  AA000007,
-  AA000008
-}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000004, AA000005, AA000006, AA000007, AA000008, PaginationCompleteForMarriageDetails}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -54,6 +44,14 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
           Ok(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/indMarDetails/SuccessResponse.json"
+            )
+          )
+        )
+      case PaginationCompleteForMarriageDetails =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/indMarDetails/SuccessPaginationResponse.json"
             )
           )
         )
