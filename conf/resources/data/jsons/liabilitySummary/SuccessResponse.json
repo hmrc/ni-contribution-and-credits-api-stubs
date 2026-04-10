@@ -27,6 +27,6 @@
     }
   ],
   "callback": {
-    "callbackURL": "/person/PaginationCompleteForLiabilityDetails/liability-summary/ABROAD?occurrenceNumber=1&type=ABROAD"
+    "callbackURL": "/ni/person/PaginationCompleteForLiabilityDetails/liability-summary/ABROAD?occurrenceNumber=1&type=ABROAD"
   }
 }

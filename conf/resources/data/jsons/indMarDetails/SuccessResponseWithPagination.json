@@ -20,7 +20,7 @@
     ],
     "_links": {
       "self": {
-        "href": "/individual/PaginationCompleteForMarriageDetails/marriage-cp",
+        "href": "/paye/individual/PaginationCompleteForMarriageDetails/marriage-cp",
         "methods": "get"
       }
     }

@@ -4,7 +4,7 @@
     "marriageDetailsList": [],
     "_links": {
       "self": {
-        "href": "/individual/AA000002/marriage-cp",
+        "href": "/paye/individual/AA000002/marriage-cp",
         "methods": "get"
       }
     }
