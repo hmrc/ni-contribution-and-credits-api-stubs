@@ -54,7 +54,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/indMarDetails/SuccessResponse.json"
+              s"conf/resources/data/jsons/indMarDetails/SuccessResponseWithPagination.json"
             )
           )
         )
@@ -62,7 +62,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/indMarDetails/SuccessPaginationResponse.json"
+              s"conf/resources/data/jsons/indMarDetails/SuccessResponseWithoutPagination.json"
             )
           )
         )
