@@ -37,8 +37,8 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
       identifier: String
   ): Future[Result] =
 
-    StubId.withName(identifier) match {
-      case AA000001A =>
+    StubId.withNameOption(identifier) match {
+      case Some(AA000001A) =>
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
@@ -46,7 +46,7 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000002 | AA000007 =>
+      case Some(AA000002A | AA000002 | AA000007) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -54,7 +54,7 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000003 =>
+      case Some(AA000003) =>
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
@@ -62,7 +62,7 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case PaginationCompleteForLiabilityDetails =>
+      case Some(PaginationCompleteForLiabilityDetails) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(

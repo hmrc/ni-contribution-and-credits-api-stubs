@@ -31,28 +31,28 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
       niccRequest: NiccRequest
   ): Future[Result] =
 
-    StubId.withName(niccRequest.nationalInsuranceNumber) match {
-      case AA000006 =>
+    StubId.withNameOption(niccRequest.nationalInsuranceNumber) match {
+      case Some(AA000006) =>
         Future.successful(
           Forbidden(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse403.json"))
         )
-      case AA000002A | AA000002 | AA000004 =>
+      case Some(AA000002A | AA000002 | AA000004) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class1andClass2SuccessResponse.json"))
         )
-      case AA000003 | AA000008 =>
+      case Some(AA000003 | AA000008) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class2SuccessResponse.json"))
         )
-      case AA000005 =>
+      case Some(AA000005) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/MinimalSuccessResponse.json"))
         )
-      case AA000001A =>
+      case Some(AA000001A) =>
         Future.successful(
           BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse400.2.json"))
         )
-      case AA000007 =>
+      case Some(AA000007) =>
         Future.successful(
           NotFound(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse400.2.json"))
         )

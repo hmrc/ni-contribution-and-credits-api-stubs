@@ -39,8 +39,8 @@ class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
       identifier: String
   ): Future[Result] =
 
-    StubId.withName(identifier) match {
-      case AA000001A =>
+    StubId.withNameOption(identifier) match {
+      case Some(AA000001A) =>
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
@@ -48,7 +48,7 @@ class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000002A | AA000006 | AA000002 | AA000003 | AA000004 | AA000007 =>
+      case Some(AA000002A | AA000006 | AA000002 | AA000003 | AA000004 | AA000007) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -56,7 +56,7 @@ class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case AA000005 =>
+      case Some(AA000005) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
