@@ -6,10 +6,11 @@
       "numberOfContributionsAndCredits": 26,
       "contributionCreditType": "C2",
       "class2Or3EarningsFactor": 3250,
-      "class2NIContributionAmount": 81.9,
+      "class2Or3NIContributionAmount": 81.9,
       "class2Or3CreditStatus": "POTENTIAL",
       "creditSource": "DIRECT DEBIT",
-      "latePaymentPeriod": "L"
+      "latePaymentPeriod": "L",
+      "receiptDate": "2022-10-10"
     }
   ]
 }
