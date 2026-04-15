@@ -24,6 +24,7 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000002A,
   AA000003,
   AA000007,
+  GK938415,
   PaginationCompleteForLiabilityDetails
 }
 import uk.gov.hmrc.utils.JsonUtils
@@ -50,7 +51,7 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/SuccessResponse.json"
+              s"conf/resources/data/jsons/liabilitySummary/LiabilitySuccessResponseWithPagination.json"
             )
           )
         )
@@ -62,11 +63,11 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case Some(PaginationCompleteForLiabilityDetails) =>
+      case Some(PaginationCompleteForLiabilityDetails | GK938415) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/SuccessLiabilityPaginationResponse.json"
+              s"conf/resources/data/jsons/liabilitySummary/LiabilitySuccessResponseWithoutPagination.json"
             )
           )
         )

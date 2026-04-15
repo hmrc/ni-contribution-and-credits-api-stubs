@@ -18,7 +18,7 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000007}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000007, GK938415}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -39,15 +39,7 @@ class Class2MaReceiptsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case Some(AA000002A | AA000002 | AA000007) =>
-        Future.successful(
-          Ok(
-            jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/c2mar/SuccessResponse.json"
-            )
-          )
-        )
-      case Some(AA000003) =>
+      case Some(AA000002A | AA000002 | AA000007 | AA000003 | GK938415) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
