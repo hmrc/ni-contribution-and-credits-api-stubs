@@ -26,7 +26,8 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000004,
   AA000005,
   AA000006,
-  AA000007
+  AA000007,
+  GK938415
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -48,7 +49,7 @@ class LongTermBenefitCalculationDetailsService @Inject() (jsonUtils: JsonUtils) 
             )
           )
         )
-      case Some(AA000002A | AA000002 | AA000003 | AA000004 | AA000007) =>
+      case Some(AA000002A | AA000002 | AA000003 | AA000004 | AA000007 | GK938415) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(

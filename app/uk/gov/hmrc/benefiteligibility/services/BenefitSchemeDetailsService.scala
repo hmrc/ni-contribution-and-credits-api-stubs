@@ -18,16 +18,7 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{
-  AA000001A,
-  AA000002,
-  AA000002A,
-  AA000003,
-  AA000004,
-  AA000005,
-  AA000006,
-  AA000007
-}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{S2123456B, S2345678C}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -36,19 +27,11 @@ import scala.concurrent.Future
 class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
 
   def mapIdentifierToResponse(
-      identifier: String
+      scon: String
   ): Future[Result] =
 
-    StubId.withNameOption(identifier) match {
-      case Some(AA000001A) =>
-        Future.successful(
-          BadRequest(
-            jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/benefitSchemeDetails/ErrorResponse400.2.json"
-            )
-          )
-        )
-      case Some(AA000002A | AA000006 | AA000002 | AA000003 | AA000004 | AA000007) =>
+    StubId.withNameOption(scon) match {
+      case Some(S2123456B) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -56,7 +39,7 @@ class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case Some(AA000005) =>
+      case Some(S2345678C) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
@@ -68,7 +51,7 @@ class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           BadRequest(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/DefaultNpsError400.json"
+              s"conf/resources/data/jsons/benefitSchemeDetails/ErrorResponse400.2.json"
             )
           )
         )

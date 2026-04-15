@@ -36,7 +36,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Forbidden(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse403.json"))
         )
-      case Some(AA000002A | AA000002 | AA000004) =>
+      case Some(AA000002A | AA000002 | AA000004 | GK938415) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class1andClass2SuccessResponse.json"))
         )

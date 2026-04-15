@@ -31,11 +31,10 @@ class BenefitSchemeDetailsController @Inject() (
     with Logging {
 
   def getBenefitSchemeDetails(
-      identifier: String,
       scon: String
   ): Action[AnyContent] =
     Action.async {
-      benefitSchemeDetailsService.mapIdentifierToResponse(identifier)
+      benefitSchemeDetailsService.mapIdentifierToResponse(scon)
     }
 
 }

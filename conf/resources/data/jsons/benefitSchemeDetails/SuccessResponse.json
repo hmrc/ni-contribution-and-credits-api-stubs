@@ -25,7 +25,7 @@
     "currentOptimisticLock": 4,
     "schemeConversionDate": "2024-12-31",
     "reconciliationDate": "2025-03-31",
-    "schemeContractedOutNumberDetails": "S3123456B"
+    "schemeContractedOutNumberDetails": "S2123456B"
   },
   "schemeAddressDetailsList": [
     {
@@ -35,7 +35,7 @@
       "country": "SCOTLAND",
       "areaDiallingCode": "0131 (99)",
       "schemeTelephoneNumber": "0131 000 0000",
-      "schemeContractedOutNumberDetails": "S3123456B",
+      "schemeContractedOutNumberDetails": "S2123456B",
       "benefitSchemeAddressDetails": {
         "schemeAddressLine1": "1 Sample Road",
         "schemeAddressLine2": "Unit 2",
