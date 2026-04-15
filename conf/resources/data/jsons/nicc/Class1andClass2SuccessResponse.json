@@ -34,20 +34,22 @@
       "numberOfContributionsAndCredits": 30,
       "contributionCreditType": "2B",
       "class2Or3EarningsFactor": 1.1,
-      "class2NIContributonAmount": 44,
+      "class2Or3NIContributionAmount": 44,
       "class2Or3CreditStatus": "VALID",
       "creditSource": "JSA TAPE INPUT",
-      "latePaymentPeriod": "ZZ"
+      "latePaymentPeriod": "ZZ",
+      "receiptDate": "2022-10-10"
     },
     {
       "taxYear": 2025,
       "numberOfContributionsAndCredits": 25,
       "contributionCreditType": "2B",
       "class2Or3EarningsFactor": 0.9,
-      "class2NIContributonAmount": 36,
+      "class2Or3NIContributionAmount": 36,
       "class2Or3CreditStatus": "VALID",
       "creditSource": "JSA PAPER INPUT",
-      "latePaymentPeriod": "L"
+      "latePaymentPeriod": "L",
+      "receiptDate": "2022-10-10"
     }
   ]
 }
