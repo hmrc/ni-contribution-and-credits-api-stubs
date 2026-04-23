@@ -17,7 +17,7 @@
 package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
-import play.api.mvc.Results.{BadRequest, Forbidden, NotFound, Ok}
+import play.api.mvc.Results.{BadRequest, Forbidden, InternalServerError, NotFound, Ok}
 import uk.gov.hmrc.benefiteligibility.models.NiccRequest
 import uk.gov.hmrc.benefiteligibility.services.StubId.*
 import uk.gov.hmrc.utils.JsonUtils
@@ -55,6 +55,10 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
       case Some(AA000007) =>
         Future.successful(
           NotFound(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse400.2.json"))
+        )
+      case Some(AA000009) =>
+        Future.successful(
+          InternalServerError(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse500.json"))
         )
       case _ =>
         Future.successful(
