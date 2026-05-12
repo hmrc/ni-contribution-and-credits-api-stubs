@@ -47,4 +47,5 @@ object StubId extends Enum[StubId] {
   case object S2123456B                             extends StubId
   case object S2345678C                             extends StubId
   case object AA000009                              extends StubId
+  case object RN001277C                             extends StubId
 }

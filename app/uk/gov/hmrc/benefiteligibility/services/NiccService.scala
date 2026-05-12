@@ -48,6 +48,10 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/MinimalSuccessResponse.json"))
         )
+      case Some(RN001277C) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001277C.json"))
+        )
       case Some(AA000001A) =>
         Future.successful(
           BadRequest(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse400.2.json"))

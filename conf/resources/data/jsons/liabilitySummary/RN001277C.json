@@ -1,0 +1,28 @@
+{
+  "liabilityDetailsList":[
+    {
+      "identifier":"RN001277C",
+      "type":"ISLE OF MAN",
+      "occurrenceNumber":32766,
+      "startDateStatus":"START DATE HELD",
+      "endDateStatus":"END DATE HELD",
+      "startDate":"1978-04-06",
+      "endDate":"1992-02-20",
+      "country":"NOT SPECIFIED OR NOT USED",
+      "trainingCreditApprovalStatus":"NO CREDIT FOR APPROVED TRAINING",
+      "casepaperReferenceNumber":"SCH/123/4",
+      "homeResponsibilitiesProtectionBenefitReference":"12345678AB",
+      "homeResponsibilitiesProtectionRate":99999999999999.98,
+      "lostCardNotificationReason":"NOT APPLICABLE",
+      "lostCardRulingReason":"NOT APPLICABLE",
+      "homeResponsibilityProtectionCalculationYear":2099,
+      "awardAmount":99999999999999.98,
+      "resourceGroupIdentifier":99999999,
+      "officeDetails":{
+        "officeLocationDecode":99999,
+        "officeLocationValue":"TRANSFER TO PREVIOUS SYSTEM",
+        "officeIdentifier":"DSS"
+      }
+    }
+  ]
+}
