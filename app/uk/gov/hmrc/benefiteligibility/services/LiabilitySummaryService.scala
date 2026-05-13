@@ -18,7 +18,19 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{AA000001A, AA000002, AA000002A, AA000003, AA000007, GK938415, PaginationCompleteForLiabilityDetails, RN001277C}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{
+  AA000001A,
+  AA000002,
+  AA000002A,
+  AA000003,
+  AA000007,
+  GK938415,
+  PaginationCompleteForLiabilityDetails,
+  RN001277C,
+  RN001280B,
+  RN001281C,
+  RN001282D
+}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -68,6 +80,30 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
           Ok(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/liabilitySummary/RN001277C.json"
+            )
+          )
+        )
+      case Some(RN001281C) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/RN001281C.json"
+            )
+          )
+        )
+      case Some(RN001280B) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/RN001280B.json"
+            )
+          )
+        )
+      case Some(RN001282D) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/liabilitySummary/RN001282D.json"
             )
           )
         )
