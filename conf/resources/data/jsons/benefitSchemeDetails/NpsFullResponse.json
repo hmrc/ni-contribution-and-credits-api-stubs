@@ -1,0 +1,48 @@
+{
+  "benefitSchemeDetails": {
+    "magneticTapeNumber": 99999,
+    "schemeName": "IOM COM 17 ACME PENSION SCHEME ACME PENSION SCHEME ACM",
+    "schemeStartDate": "1997-04-06",
+    "schemeCessationDate": "2005-07-25",
+    "contractedOutDeductionExtinguishedDate": "2005-07-25",
+    "paymentSuspensionDate": "2005-07-25",
+    "recoveriesSuspendedDate": "2005-07-25",
+    "paymentRestartDate": "2005-07-25",
+    "recoveriesRestartedDate": "2005-07-25",
+    "schemeNature": "INSURANCE POLICIES",
+    "benefitSchemeInstitution": "BANK",
+    "accruedGMPLiabilityServiceDate": "2005-07-25",
+    "rerouteToSchemeCessation": "RE-ROUTE TO CESSATION",
+    "statementInhibitor": "SET",
+    "certificateCancellationDate": "2005-07-25",
+    "suspendedDate": "2005-07-25",
+    "isleOfManInterest": false,
+    "schemeWindingUp": false,
+    "revaluationRateSequenceNumber": 32700,
+    "benefitSchemeStatus": "ACTIVE",
+    "dateFormallyCertified": "2005-07-25",
+    "privatePensionSchemeSanctionDate": "2005-07-25",
+    "currentOptimisticLock": 254,
+    "schemeConversionDate": "2005-07-25",
+    "reconciliationDate": "2005-07-25",
+    "schemeContractedOutNumberDetails": "A7123456Q"
+  },
+  "schemeAddressDetailsList": [
+    {
+      "schemeAddressType": "GENERAL CORRESPONDENCE",
+      "schemeAddressSequenceNumber": 126,
+      "schemeAddressStartDate": "1997-10-27",
+      "country": "GREAT BRITAIN",
+      "areaDiallingCode": "01204 (10)",
+      "schemeTelephoneNumber": "0191 123 456789",
+      "schemeContractedOutNumberDetails": "A7123456Q",
+      "benefitSchemeAddressDetails": {
+        "schemeAddressLine1": "SINGLE WATSON WYAT PARTNERS",
+        "schemeAddressLine2": "COSR ELECTS COMP EXIST ADD2",
+        "schemeAddressLocality": "SOVEREIGNSTREET CRAMLINGTON",
+        "schemeAddressPostalTown": "WASHINGTON NORTHUMBERLAND 4",
+        "schemePostcode": "XX99 9XX"
+      }
+    }
+  ]
+}

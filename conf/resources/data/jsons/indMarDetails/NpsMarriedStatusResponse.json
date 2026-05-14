@@ -1,0 +1,13 @@
+{
+  "marriageDetails": {
+    "activeMarriage": true,
+    "marriageDetailsList": [
+      {
+        "sequenceNumber": 126,
+        "status": "MARRIED",
+        "startDate": "2026-05-07",
+        "spouseIdentifier": "363333WP"
+      }
+    ]
+  }
+}

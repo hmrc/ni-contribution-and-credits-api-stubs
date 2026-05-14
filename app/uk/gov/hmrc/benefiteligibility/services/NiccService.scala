@@ -44,7 +44,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Class2SuccessResponse.json"))
         )
-      case Some(AA000005) =>
+      case Some(AA000005 | NY634367C) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/MinimalSuccessResponse.json"))
         )
@@ -59,6 +59,76 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
       case Some(AA000009) =>
         Future.successful(
           InternalServerError(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse500.json"))
+        )
+      case Some(
+            RN001296B | RN001291A | RN001308B | RN001289C | RN001288B | RN001287A | RN001286D | PW899033A | PW908233A
+          ) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsFullResponse.json"))
+        )
+      case Some(CK000021B | ZC249813B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsC1Response.json"))
+        )
+      case Some(BE699233A) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsC1Reponse2years.json"))
+        )
+      case Some(CK000003B | CE002370A | JA000017B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsC2or3Response.json"))
+        )
+      case Some(AA271213C) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsC1Reponse20years.json"))
+        )
+      case Some(CK000008B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsFullResponseOver6yrs.json"))
+        )
+      case Some(JG796219A) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsC2orC3Response3years.json"))
+        )
+      case Some(RN001856A) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001856A.json"))
+        )
+      case Some(RN001857B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001857B.json"))
+        )
+      case Some(RN001859D) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001859D.json"))
+        )
+      case Some(RN001965B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001965B.json"))
+        )
+      case Some(RN001966C) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001966C.json"))
+        )
+      case Some(RN001969B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001969B.json"))
+        )
+      case Some(RN001970C) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001970C.json"))
+        )
+      case Some(RN001973B) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001973B.json"))
+        )
+      case Some(RN001967D) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001967D.json"))
+        )
+      case Some(RN001968A) =>
+        Future.successful(
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001968A.json"))
         )
       case _ =>
         Future.successful(

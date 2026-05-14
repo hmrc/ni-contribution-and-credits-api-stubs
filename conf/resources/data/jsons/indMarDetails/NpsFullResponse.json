@@ -1,0 +1,20 @@
+{
+  "marriageDetails": {
+    "activeMarriage": false,
+    "marriageDetailsList": [
+      {
+        "sequenceNumber": 1,
+        "status": "WIDOWED",
+        "startDate": "1975-07-21",
+        "startDateStatus": "VERIFIED",
+        "endDate": "1979-09-21",
+        "endDateStatus": "VERIFIED",
+        "spouseIdentifier": "YT564729C",
+        "spouseForename": "A",
+        "spouseSurname": "Ab",
+        "separationDate": "1979-09-21",
+        "reconciliationDate": "1979-09-21"
+      }
+    ]
+  }
+}

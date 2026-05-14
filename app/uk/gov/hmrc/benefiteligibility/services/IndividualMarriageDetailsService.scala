@@ -28,8 +28,37 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000006,
   AA000007,
   AA000008,
+  AA271213C,
+  BE699233A,
+  CE002370A,
+  CK000003B,
+  CK000008B,
+  CK000021B,
   GK938415,
-  PaginationCompleteForMarriageDetails
+  JA000017B,
+  JG796219A,
+  NY634367C,
+  PW899033A,
+  PW908233A,
+  PaginationCompleteForMarriageDetails,
+  RN001286D,
+  RN001287A,
+  RN001288B,
+  RN001289C,
+  RN001291A,
+  RN001296B,
+  RN001308B,
+  RN001856A,
+  RN001857B,
+  RN001859D,
+  RN001965B,
+  RN001966C,
+  RN001967D,
+  RN001968A,
+  RN001969B,
+  RN001970C,
+  RN001973B,
+  ZC249813B
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -56,6 +85,28 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
           Ok(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/indMarDetails/SuccessResponseWithPagination.json"
+            )
+          )
+        )
+      case Some(
+            RN001296B | RN001291A | RN001308B | RN001289C | RN001288B | RN001287A | RN001286D | CK000021B | ZC249813B |
+            AA271213C | CK000008B | BE699233A | PW899033A | PW908233A | RN001856A | RN001857B | RN001965B
+          ) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/indMarDetails/NpsFullResponse.json"
+            )
+          )
+        )
+      case Some(
+            CK000003B | CE002370A | JG796219A | JA000017B | NY634367C | RN001859D | RN001966C | RN001969B | RN001970C |
+            RN001973B | RN001967D | RN001968A
+          ) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/indMarDetails/NpsMarriedStatusResponse.json"
             )
           )
         )

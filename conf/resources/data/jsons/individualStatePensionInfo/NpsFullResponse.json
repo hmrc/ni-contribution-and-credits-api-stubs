@@ -1,0 +1,341 @@
+{
+  "nationalInsuranceNumber": "WP363333",
+  "numberOfQualifyingYears": 8,
+  "nonQualifyingYears": 42,
+  "yearsToFinalRelevantYear": 0,
+  "nonQualifyingYearsPayable": 0,
+  "pre1975CCCount": 135,
+  "dateOfEntry": "1967-08-01",
+  "contributionsByTaxYear": [
+    {
+      "taxYear": 1975,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1976,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1977,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1978,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1979,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1980,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1981,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1982,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1983,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1984,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1985,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1986,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1987,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1988,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1989,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1990,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1991,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1992,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1993,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1994,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1995,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1996,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 278.55,
+      "coClassOnePaid": 215.11,
+      "coPrimaryPaidEarnings": 2623,
+      "niEarningsSelfEmployed": 99,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 5795
+    },
+    {
+      "taxYear": 1997,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 295.16,
+      "coClassOnePaid": 231.92,
+      "coPrimaryPaidEarnings": 2761,
+      "niEarningsVoluntary": 99,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 5923
+    },
+    {
+      "taxYear": 1998,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 1999,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2000,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2001,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2002,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2003,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2004,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2005,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2006,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2007,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2008,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2009,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2010,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2011,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "totalPrimaryContributions": 278.55,
+      "coClassOnePaid": 1565.84,
+      "coPrimaryPaidEarnings": 18679,
+      "niEarningsSelfEmployed": 53,
+      "underInvestigationFlag": false,
+      "totalPrimaryPaidEarnings": 5795
+    },
+    {
+      "taxYear": 2012,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "coClassOnePaid": 1350.73,
+      "coPrimaryPaidEarnings": 16056,
+      "niEarningsSelfEmployed": 53,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2013,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "coClassOnePaid": 1350.73,
+      "coPrimaryPaidEarnings": 16056,
+      "niEarningsSelfEmployed": 53,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2014,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "coClassOnePaid": 1350.73,
+      "coPrimaryPaidEarnings": 16056,
+      "niEarningsSelfEmployed": 53,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2015,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "coClassOnePaid": 1350.73,
+      "coPrimaryPaidEarnings": 16056,
+      "niEarningsSelfEmployed": 53,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2016,
+      "qualifyingTaxYear": true,
+      "payableAccepted": false,
+      "coClassOnePaid": 1350.73,
+      "coPrimaryPaidEarnings": 16056,
+      "niEarningsSelfEmployed": 53,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2017,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2018,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2019,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2020,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2021,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2022,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2023,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    },
+    {
+      "taxYear": 2024,
+      "qualifyingTaxYear": false,
+      "payableAccepted": false,
+      "underInvestigationFlag": false
+    }
+  ]
+}

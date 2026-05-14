@@ -1,0 +1,17 @@
+{
+  "totalGraduatedPensionUnits": 0.616667,
+  "class1ContributionAndCredits": [
+    {
+      "taxYear": 1975,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "CS",
+      "primaryContribution": 278.55,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 500.00,
+      "creditSource": "NOT APPLICABLE",
+      "employerName": "MODCH",
+      "latePaymentPeriod": "ZY"
+    }
+  ]
+}
