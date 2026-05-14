@@ -1,0 +1,163 @@
+{
+  "totalGraduatedPensionUnits": 0.616667,
+  "class1ContributionAndCredits": [
+    {
+      "taxYear": 2011,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "CS",
+      "primaryContribution": 278.55,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 5795,
+      "creditSource": "NOT APPLICABLE",
+      "employerName": "MODCH",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2011,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2012,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2013,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2014,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2015,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2016,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    }
+  ],
+  "class2Or3ContributionAndCredits": [
+    {
+      "taxYear": 2011,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 132.5,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2012,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 140.45,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2013,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 143.1,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2014,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 145.75,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2015,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 148.4,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2016,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 148.4,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    }
+  ]
+}

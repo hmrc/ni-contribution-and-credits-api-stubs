@@ -1,0 +1,38 @@
+{
+  "totalGraduatedPensionUnits": 100,
+  "class2Or3ContributionAndCredits": [
+    {
+      "taxYear": 2018,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 0,
+      "class2Or3NIContributionAmount": 161.65,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2019,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 140.45,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    },
+    {
+      "taxYear": 2020,
+      "numberOfContributionsAndCredits": 53,
+      "contributionCreditType": "C2",
+      "class2Or3EarningsFactor": 99999999999999.98,
+      "class2Or3NIContributionAmount": 143.1,
+      "class2Or3CreditStatus": "NOT KNOWN/NOT APPLICABLE",
+      "creditSource": "JSA TAPE INPUT",
+      "latePaymentPeriod": "ZY",
+      "receiptDate": "1953-01-02"
+    }
+  ]
+}

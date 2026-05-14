@@ -27,7 +27,14 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000005,
   AA000006,
   AA000007,
-  GK938415
+  GK938415,
+  RN001286D,
+  RN001287A,
+  RN001288B,
+  RN001289C,
+  RN001291A,
+  RN001296B,
+  RN001308B
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -62,6 +69,14 @@ class SchemeMembershipDetailsService @Inject() (jsonUtils: JsonUtils) {
           Ok(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/schemeMembershipDetails/MinimalSuccessResponse.json"
+            )
+          )
+        )
+      case Some(RN001296B | RN001291A | RN001308B | RN001289C | RN001288B | RN001287A | RN001286D) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/schemeMembershipDetails/NpsFullResponse.json"
             )
           )
         )

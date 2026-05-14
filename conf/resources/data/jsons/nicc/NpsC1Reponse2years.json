@@ -1,0 +1,30 @@
+{
+  "totalGraduatedPensionUnits": 0.616667,
+  "class1ContributionAndCredits": [
+    {
+      "taxYear": 2020,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "CS",
+      "primaryContribution": 278.55,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 5795,
+      "creditSource": "NOT APPLICABLE",
+      "employerName": "MODCH",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2021,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 0,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    }
+  ]
+}

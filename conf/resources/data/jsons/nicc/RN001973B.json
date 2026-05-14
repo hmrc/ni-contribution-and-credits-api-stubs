@@ -1,0 +1,43 @@
+{
+  "totalGraduatedPensionUnits": 0.616667,
+  "class1ContributionAndCredits": [
+    {
+      "taxYear": 2011,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "CS",
+      "primaryContribution": 278.55,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 4001,
+      "creditSource": "NOT APPLICABLE",
+      "employerName": "MODCH",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2012,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 8500,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    },
+    {
+      "taxYear": 2013,
+      "numberOfContributionsAndCredits": 0,
+      "contributionCategoryLetter": "D",
+      "contributionCategory": "DEFERRED RATE",
+      "contributionCreditType": "C1",
+      "primaryContribution": 0,
+      "class1ContributionStatus": "VALID",
+      "primaryPaidEarnings": 9999,
+      "creditSource": "EMPLOYMENT SERVICES",
+      "employerName": "Q",
+      "latePaymentPeriod": "ZY"
+    }
+  ]
+}

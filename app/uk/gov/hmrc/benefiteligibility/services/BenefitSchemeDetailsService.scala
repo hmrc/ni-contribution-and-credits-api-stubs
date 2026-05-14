@@ -18,7 +18,7 @@ package uk.gov.hmrc.benefiteligibility.services
 
 import play.api.mvc.Result
 import play.api.mvc.Results.{BadRequest, Ok}
-import uk.gov.hmrc.benefiteligibility.services.StubId.{S2123456B, S2345678C}
+import uk.gov.hmrc.benefiteligibility.services.StubId.{A7123456Q, S2123456B, S2345678C, S8999000N}
 import uk.gov.hmrc.utils.JsonUtils
 
 import javax.inject.Inject
@@ -44,6 +44,14 @@ class BenefitSchemeDetailsService @Inject() (jsonUtils: JsonUtils) {
           Ok(
             jsonUtils.readJsonFile(
               s"conf/resources/data/jsons/benefitSchemeDetails/MinimalSuccessResponse.json"
+            )
+          )
+        )
+      case Some(S8999000N | A7123456Q) =>
+        Future.successful(
+          Ok(
+            jsonUtils.readJsonFile(
+              s"conf/resources/data/jsons/benefitSchemeDetails/NpsFullResponse.json"
             )
           )
         )
