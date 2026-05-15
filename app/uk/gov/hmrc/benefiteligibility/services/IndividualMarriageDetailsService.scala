@@ -100,8 +100,8 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
           )
         )
       case Some(
-            CK000003B | CE002370A | JG796219A | JA000017B | RN001859D | RN001966C | RN001969B | RN001970C |
-            RN001973B | RN001968A
+            CK000003B | CE002370A | JG796219A | JA000017B | RN001859D | RN001966C | RN001969B | RN001970C | RN001973B |
+            RN001968A
           ) =>
         Future.successful(
           Ok(
