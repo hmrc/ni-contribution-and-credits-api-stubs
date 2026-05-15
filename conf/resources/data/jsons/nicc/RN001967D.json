@@ -3,7 +3,6 @@
   "class1ContributionAndCredits": [
     {
       "taxYear": 2016,
-      "numberOfContributionsAndCredits": 10,
       "contributionCategoryLetter": "A",
       "contributionCategory": "DEFERRED RATE",
       "contributionCreditType": "C1",
@@ -16,7 +15,6 @@
     },
     {
       "taxYear": 2016,
-      "numberOfContributionsAndCredits": 15,
       "contributionCategoryLetter": "X",
       "contributionCategory": "DEFERRED RATE",
       "contributionCreditType": "C1",
@@ -29,7 +27,6 @@
     },
     {
       "taxYear": 2017,
-      "numberOfContributionsAndCredits": 1,
       "contributionCategoryLetter": "B",
       "contributionCategory": "DEFERRED RATE",
       "contributionCreditType": "C1",
@@ -42,7 +39,6 @@
     },
     {
       "taxYear": 2018,
-      "contributionCategoryLetter": "O",
       "contributionCategory": "DEFERRED RATE",
       "contributionCreditType": "CS",
       "primaryContribution": 278.55,
@@ -54,7 +50,6 @@
     },
     {
       "taxYear": 2019,
-      "numberOfContributionsAndCredits": 3,
       "contributionCategoryLetter": "T",
       "contributionCategory": "DEFERRED RATE",
       "contributionCreditType": "C1",
@@ -67,7 +62,6 @@
     },
     {
       "taxYear": 2020,
-      "numberOfContributionsAndCredits": 23,
       "contributionCategoryLetter": "X",
       "contributionCategory": "DEFERRED RATE",
       "contributionCreditType": "C1",
