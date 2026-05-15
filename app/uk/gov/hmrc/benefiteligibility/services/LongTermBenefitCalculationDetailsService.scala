@@ -76,7 +76,7 @@ class LongTermBenefitCalculationDetailsService @Inject() (jsonUtils: JsonUtils) 
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/longTermBenefitCalcDetails/NpsFullResponseOver6yrs.json"
+              s"conf/resources/data/jsons/longTermBenefitCalcDetails/NpsFullResponse.json"
             )
           )
         )
