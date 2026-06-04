@@ -26,10 +26,10 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000007,
   GK938415,
   PaginationCompleteForLiabilityDetails,
-  RN001277C,
-  RN001280B,
-  RN001281C,
-  RN001282D
+  RN001277B,
+  RN001280A,
+  RN001281B,
+  RN001282C
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -75,35 +75,35 @@ class LiabilitySummaryService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case Some(RN001277C) =>
+      case Some(RN001277B) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/RN001277C.json"
+              s"conf/resources/data/jsons/liabilitySummary/RN001277B.json"
             )
           )
         )
-      case Some(RN001281C) =>
+      case Some(RN001281B) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/RN001281C.json"
+              s"conf/resources/data/jsons/liabilitySummary/RN001281B.json"
             )
           )
         )
-      case Some(RN001280B) =>
+      case Some(RN001280A) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/RN001280B.json"
+              s"conf/resources/data/jsons/liabilitySummary/RN001280A.json"
             )
           )
         )
-      case Some(RN001282D) =>
+      case Some(RN001282C) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
-              s"conf/resources/data/jsons/liabilitySummary/RN001282D.json"
+              s"conf/resources/data/jsons/liabilitySummary/RN001282C.json"
             )
           )
         )
