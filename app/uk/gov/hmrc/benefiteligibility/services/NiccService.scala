@@ -81,7 +81,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
           InternalServerError(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse500.json"))
         )
       case Some(
-        RN001296A | RN001291D | RN001308A | RN001289B | RN001288A | RN001287D | RN001286C | PW899033A | PW908233A
+            RN001296A | RN001291D | RN001308A | RN001289B | RN001288A | RN001287D | RN001286C | PW899033A | PW908233A
           ) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsFullResponse.json"))
