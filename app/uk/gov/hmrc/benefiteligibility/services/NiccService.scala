@@ -48,25 +48,25 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/MinimalSuccessResponse.json"))
         )
-      case Some(RN001277C | RN001281C | RN001280B | RN001284B | RN001295A | RN001294D) =>
+      case Some(RN001277B | RN001281B | RN001280A | RN001284A | RN001295D | RN001294C) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/Nicc200Response.json"))
         )
-      case Some(RN001282D) =>
+      case Some(RN001282C) =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001282D.json"))
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001282C.json"))
         )
-      case Some(RN001285C) =>
+      case Some(RN001285B) =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001285C.json"))
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001285B.json"))
         )
-      case Some(RN001293C) =>
+      case Some(RN001293B) =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001293C.json"))
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001293B.json"))
         )
-      case Some(RN001292B) =>
+      case Some(RN001292A) =>
         Future.successful(
-          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001292B.json"))
+          Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/RN001292A.json"))
         )
       case Some(AA000001A) =>
         Future.successful(
@@ -81,7 +81,7 @@ class NiccService @Inject() (jsonUtils: JsonUtils) {
           InternalServerError(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/ErrorResponse500.json"))
         )
       case Some(
-            RN001296B | RN001291A | RN001308B | RN001289C | RN001288B | RN001287A | RN001286D | PW899033A | PW908233A
+            RN001296A | RN001291D | RN001308A | RN001289B | RN001288A | RN001287D | RN001286C | PW899033A | PW908233A
           ) =>
         Future.successful(
           Ok(jsonUtils.readJsonFile(s"conf/resources/data/jsons/nicc/NpsFullResponse.json"))

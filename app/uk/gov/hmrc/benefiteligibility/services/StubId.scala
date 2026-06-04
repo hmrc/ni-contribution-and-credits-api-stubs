@@ -47,13 +47,13 @@ object StubId extends Enum[StubId] {
   case object S2123456B                             extends StubId
   case object S2345678C                             extends StubId
   case object AA000009                              extends StubId
-  case object RN001296B                             extends StubId
-  case object RN001291A                             extends StubId
-  case object RN001308B                             extends StubId
-  case object RN001289C                             extends StubId
-  case object RN001288B                             extends StubId
-  case object RN001287A                             extends StubId
-  case object RN001286D                             extends StubId
+  case object RN001296A                             extends StubId
+  case object RN001291D                             extends StubId
+  case object RN001308A                             extends StubId
+  case object RN001289B                             extends StubId
+  case object RN001288A                             extends StubId
+  case object RN001287D                             extends StubId
+  case object RN001286C                             extends StubId
   case object S8999000N                             extends StubId
   case object A7123456Q                             extends StubId
   case object CK000021B                             extends StubId
@@ -78,14 +78,14 @@ object StubId extends Enum[StubId] {
   case object RN001973B                             extends StubId
   case object RN001967D                             extends StubId
   case object RN001968A                             extends StubId
-  case object RN001277C                             extends StubId
-  case object RN001281C                             extends StubId
-  case object RN001280B                             extends StubId
-  case object RN001284B                             extends StubId
-  case object RN001295A                             extends StubId
-  case object RN001294D                             extends StubId
-  case object RN001282D                             extends StubId
-  case object RN001285C                             extends StubId
-  case object RN001293C                             extends StubId
-  case object RN001292B                             extends StubId
+  case object RN001277B                             extends StubId
+  case object RN001281B                             extends StubId
+  case object RN001280A                             extends StubId
+  case object RN001284A                             extends StubId
+  case object RN001295D                             extends StubId
+  case object RN001294C                             extends StubId
+  case object RN001282C                             extends StubId
+  case object RN001285B                             extends StubId
+  case object RN001293B                             extends StubId
+  case object RN001292A                             extends StubId
 }

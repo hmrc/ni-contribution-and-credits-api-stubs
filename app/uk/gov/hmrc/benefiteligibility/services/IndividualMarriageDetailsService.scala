@@ -41,13 +41,13 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   PW899033A,
   PW908233A,
   PaginationCompleteForMarriageDetails,
-  RN001286D,
-  RN001287A,
-  RN001288B,
-  RN001289C,
-  RN001291A,
-  RN001296B,
-  RN001308B,
+  RN001286C,
+  RN001287D,
+  RN001288A,
+  RN001289B,
+  RN001291D,
+  RN001296A,
+  RN001308A,
   RN001856A,
   RN001857B,
   RN001859D,
@@ -89,7 +89,7 @@ class IndividualMarriageDetailsService @Inject() (jsonUtils: JsonUtils) {
           )
         )
       case Some(
-            RN001296B | RN001291A | RN001308B | RN001289C | RN001288B | RN001287A | RN001286D | CK000021B | ZC249813B |
+            RN001296A | RN001291D | RN001308A | RN001289B | RN001288A | RN001287D | RN001286C | CK000021B | ZC249813B |
             AA271213C | CK000008B | BE699233A | PW899033A | PW908233A | RN001856A | RN001857B | RN001965B
           ) =>
         Future.successful(

@@ -28,13 +28,13 @@ import uk.gov.hmrc.benefiteligibility.services.StubId.{
   AA000006,
   AA000007,
   GK938415,
-  RN001286D,
-  RN001287A,
-  RN001288B,
-  RN001289C,
-  RN001291A,
-  RN001296B,
-  RN001308B
+  RN001286C,
+  RN001287D,
+  RN001288A,
+  RN001289B,
+  RN001291D,
+  RN001296A,
+  RN001308A
 }
 import uk.gov.hmrc.utils.JsonUtils
 
@@ -72,7 +72,7 @@ class IndividualStatePensionInfoService @Inject() (jsonUtils: JsonUtils) {
             )
           )
         )
-      case Some(RN001296B | RN001291A | RN001308B | RN001289C | RN001288B | RN001287A | RN001286D) =>
+      case Some(RN001296A | RN001291D | RN001308A | RN001289B | RN001288A | RN001287D | RN001286C) =>
         Future.successful(
           Ok(
             jsonUtils.readJsonFile(
