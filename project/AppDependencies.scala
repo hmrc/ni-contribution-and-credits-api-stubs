@@ -7,12 +7,12 @@ object AppDependencies {
 
   val compile: Seq[ModuleID] = Seq(
     "uk.gov.hmrc" %% s"bootstrap-backend-$playVersion" % bootstrapVersion,
-    "com.beachape" %% "enumeratum-play-json" % "1.9.2"
+    "com.beachape" %% "enumeratum-play-json" % "1.9.7"
   )
 
   val test: Seq[ModuleID] = Seq(
     "uk.gov.hmrc" %% s"bootstrap-test-$playVersion" % bootstrapVersion % Test,
-    "com.beachape" %% "enumeratum-play-json" % "1.9.2" % Test
+    "com.beachape" %% "enumeratum-play-json" % "1.9.7" % Test
   )
 
   val it: Seq[ModuleID] = Seq.empty
