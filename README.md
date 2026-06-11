@@ -1,5 +1,5 @@
 
-# ni-contribution-and-credits-api-stubs
+# ni-contribution-and-credits-api-stubs [Old]
 
 This project provides a stub for the [National Insurance Contribution and Credit service]
 
@@ -71,6 +71,18 @@ https://<host>/nps-json-service/nps/v1/api/national-insurance/:nationalInsurance
   ]
 }
 ```
+
+# ni-contribution-and-credits-api-stubs [New]
+
+Some of downstream APIs with NINOs having different status code
+
+| NINOs to provide                      | EXPECTED RESPONSE     | STATUS CODE |
+|---------------------------------------|-----------------------|-------------|
+| NICC                      - AA000002A | OK                    | 200         |
+| IndividualMarriageDetails - AA000001A | Bad Request           | 400         |
+| LongTermBenefitNotes      - AA000006  | UnprocessableEntity   | 422         |
+| LiabilitySummary          - AA000003  | Internal Server Error | 500         |
+
 
 ### License
 
